@@ -1,0 +1,43 @@
+<view class="date">
+    <picker mode="date" value="{{year}}-{{month}}" bindchange="changeDate"
+            fields="month" start="2000-01-01" end="2100-12-31">
+        {{year}}年{{month}}月
+        <image src="/images/punch/xiala.png" class="change_date"></image>
+    </picker>
+</view>
+<view class="head">
+    <view>日</view>
+    <view>一</view>
+    <view>二</view>
+    <view>三</view>
+    <view>四</view>
+    <view>五</view>
+    <view>六</view>
+</view>
+<view class="box">
+    <block wx:for="{{lists}}" wx:key="{{item.index}}">
+        <view class='date_item {{item.today ? "today" : ""}} {{check_list != null && check_list.index == item.index ? "checked" : ""}}'
+            bindtap="click_item" data-index="{{index}}">
+            {{item.today ? '今天' : item.day}}
+            <view class="has_data" wx:if="{{item.data.length > 0}}"></view>
+        </view>
+    </block>
+</view>
+<view wx:if="{{check_list != null}}" class="data_box">
+    <view class="data_title bt">打卡数据</view>
+    <view class="lists" wx:if="{{check_list != null && check_list.data.length > 0}}">
+        <view wx:for="{{check_list.data}}" wx:key="{{item.attendanceTime}}" class="bt mt10">
+            <view class="item">
+                <image src="/images/punch/location.png"></image>
+                <view>{{item.attendanceStie}}</view>
+            </view>
+            <view class="item">
+                <image src="/images/punch/time.png"></image>
+                <view class="time">{{item.attendanceTime}}</view>
+            </view>
+            <image class="type" src="/images/punch/{{item.attendanceType == 1?'xiaban':'shangban'}}.png"></image>
+        </view>
+    </view>
+    <view wx:else class="no_dk_data">{{check_list.date}} 没有打卡数据</view>
+</view>
+

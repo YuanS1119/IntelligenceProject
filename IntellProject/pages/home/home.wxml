@@ -1,0 +1,58 @@
+<swiper style='height:435rpx;margin-bottom:10rpx;'
+        indicator-dots="{{banner.length > 1?true:false}}"
+        indicator-color="white"
+        indicator-active-color="#999"
+        autoplay="true"
+        interval="2000"
+        wx:if="{{banner.length > 0}}">
+    <block wx:for="{{banner}}" wx:key="{{index}}">
+        <swiper-item>
+            <image src="{{item.imgUrl}}" class="slide-image" mode="scaleToFill"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<view class='list_box'>
+    <view class="list_item">
+        <view class="info_item">
+            <text class='info_item_key'>名字</text>
+            <text class='info_item_value'>{{name}}</text>
+        </view>
+    </view>
+    <view class="list_item">
+        <view class="info_item bt">
+            <text class='info_item_key'>账号</text>
+            <text class='info_item_value'>{{loginName}}</text>
+        </view>
+    </view>
+
+
+    <view class="list_item">
+        <view class="info_item">
+            <text class='info_item_key'>当前项目</text>
+            <view class='info_item_value'>
+                <picker range="{{projects}}" range-key="projectAbbreviation" bindchange="changeProject">
+                    <block wx:if="{{local_project==''}}">
+                        请选择所在项目
+                    </block>
+                    <block wx:else>
+                        {{ local_project.projectAbbreviation }}
+                    </block>
+                </picker>
+            </view>
+            <image src="/images/arrow_right.png" class="navigator_right"></image>
+        </view>
+    </view>
+</view>
+
+<view class='list_box'>
+    <navigator url='/pages/home/info' open-type="navigate" class="list_item">
+        <view class="info_item bt">
+            <text class='info_item_key'>关于智慧施工小程序</text>
+            <image class='navigator_right' src='/images/arrow_right.png' mode="aspectFit"></image>
+        </view>
+    </navigator>
+</view>
+
+<view class='buttons_box'>
+    <button class='submit logout' bindtap='logout'>退出登录</button>
+</view>

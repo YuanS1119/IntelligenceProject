@@ -1,0 +1,120 @@
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+<view class='box'>
+    <view class='wx_title'>作业队</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>作业队</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.operationName)}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>单位工程</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>专业</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.majorName)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>单位工程</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.engineeringUnitName)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item"  wx:if="{{info.majorCode=='cjw'}}">
+                <text class='info_item_key'>支柱号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.pillarName)}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>分项工程</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>分项工程名称</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.subItemName)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>设计数量</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.subItemDesignNum)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>剩余数量</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.leftnum)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>本次完工数量</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.finishNum)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>单位</text>
+                <view class='info_item_value'>{{ filter.nullFormat(info.subItemUnit)}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>物料信息</view>
+    <view class='list_box mb5' wx:for="{{wls}}" wx:key="{{index}}">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>物料名称</text>
+                <view class='info_item_value '>{{ filter.nullFormat(item.materialName)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>库存</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.stockNum)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>规格型号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.specificationsModel)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>技术标准</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.technologyStandard)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>批次号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.batchNum)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>序列号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.serialNum)}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>消耗数量</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.consumNum)}}</view>
+            </view>
+        </view>
+    </view>
+</view>

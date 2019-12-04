@@ -1,0 +1,20 @@
+/* .box{padding: 30rpx 0;}
+.h3{padding: 0 20rpx;}
+.code{font-size: 28rpx; color: #999;line-height: 60rpx;padding-left: 30rpx;margin-top: 10rpx;}
+.input_item{margin-top: 30rpx;height: 60rpx;line-height: 60rpx;}
+.input_txt{width: 200rpx;font-size: 13px;text-align: right;padding-right: 10rpx;}
+.input_pick{width: 540rpx;font-size: 12px;color: #999;}
+.submit{width: 94%;height: 80rpx;background: #6ba7fd;color: white;line-height: 90rpx;font-size: 36rpx;margin-top: 80rpx;margin: 40rpx auto 0;}
+.form_input{height: 70rpx;font-size: 28rpx;border-bottom: 1px solid white;} */
+
+page{background: #ededed;}
+.title{padding: 10px 0 5px 16px;font-size: 14px;}
+.info_items{padding-left: 16px;background: white;}
+.info_item{height: 45px;line-height: 45px;font-size: 14px;position: relative;border-bottom: 1px solid #ddd;display: flex;}
+.info_item:last-of-type{border: none;}
+.info_item_key{color: #333;padding-right: 20px;}
+.info_item_value{color: #999;float: right;margin-right: 10px;flex: 1;text-align: right;overflow: hidden;
+    text-overflow: ellipsis;    white-space: nowrap;}
+.submit{width: 94%;height: 80rpx;background: #07C160;color: white;line-height: 90rpx;
+    font-size: 36rpx;margin-top: 80rpx;margin: 40rpx auto 0;}
+.form_input{height: 100%;}

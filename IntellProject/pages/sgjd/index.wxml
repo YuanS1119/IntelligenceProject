@@ -1,0 +1,92 @@
+<!--pages/sgjd/index.wxml-->
+<view class="container">
+    <view class='box'>
+        <view class='wx_title'>施工进度查看</view>
+        <view class='function_box'>
+            <view class='function_item' bindtap='no_power'>
+                <image class='item_img' src='/images/analysistics.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>实物工程量每日进度</view>
+                    <view class='item_t2'>查看过去每天各作业队/工区的分部分项工程施工完成数量</view>
+                </view>
+            </view>
+            <view class='function_item'
+                  data-url="/pages/sgjd/fenxi/jindu"
+                  bindtap='go_url'
+            >
+                <image class='item_img' src='/images/analysistics3.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>实物工程量总体进度</view>
+                    <view class='item_t2'>查看分部分项工程的设计、完成数量和百分比等</view>
+                </view>
+            </view>
+            <view class='function_item' bindtap='no_power'>
+                <image class='item_img' src='/images/analysistics2.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>形象进度图</view>
+                    <view class='item_t2'>查看各专业的形象进度图</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='box'>
+        <view class='wx_title'>施工进度上报</view>
+        <view class='function_box'>
+            <navigator url='/pages/sgjd/shangbao/add' open-type="navigate" class='function_item'>
+                <image class='item_img' src='/images/report1.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>上报施工进度</view>
+                    <view class='item_t2'>（每日）各作业队/工区上报分部分项工程施工完成数量</view>
+                </view>
+            </navigator>
+            <navigator url='/pages/sgjd/shangbao/wait_list' open-type="navigate" class='function_item'>
+                <image class='item_img' src='/images/todo1.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>未提交</view>
+                    <view class='item_t2'>打开曾暂时保存的“施工进度上报”信息，用于正式提交</view>
+                </view>
+            </navigator>
+            <navigator url='/pages/sgjd/shangbao/history_list' open-type="navigate" class='function_item'>
+                <image class='item_img' src='/images/finish1.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>历史查询</view>
+                    <view class='item_t2'>查询自己历史上报的分部分项工程施工完成数量</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+    <view class='box'>
+        <view class='wx_title'>形象进度图工序上报</view>
+        <view class='function_box'>
+            <view class='function_item'
+                  data-url="/pages/sgjd/xingxiang/add"
+                  bindtap="go_url"
+            >
+                <image class='item_img' src='/images/report2.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>施工工序上报</view>
+                    <view class='item_t2'>各作业队/工区上报施工工序数据</view>
+                </view>
+            </view>
+            <view class='function_item'
+                  data-url="/pages/sgjd/xingxiang/wait_list"
+                  bindtap="go_url"
+            >
+                <image class='item_img' src='/images/todo2.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>未提交</view>
+                    <view class='item_t2'>打开曾暂时保存的“施工工序上报”信息，用于正式提交</view>
+                </view>
+            </view>
+            <view class='function_item' bindtap='no_power'>
+                <image class='item_img' src='/images/finish2.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>进度查询</view>
+                    <view class='item_t2'>查询自己历史上报的施工工序数据</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

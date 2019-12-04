@@ -1,0 +1,72 @@
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+<view class='box'>
+    <view class='wx_title'>二维码信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>杆号SID</text>
+                <text class='info_item_value'>{{ filter.nullFormat(code) }}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>物料信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>物料编码</text>
+                <text class='info_item_value'>{{ filter.nullFormat(material.materialCode)}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>物资名称</text>
+                <text class='info_item_value'>{{ filter.nullFormat(material.materialName)}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>规格型号</text>
+                <text class='info_item_value'>{{ filter.nullFormat(material.specificationsModel)}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>技术标准</text>
+                <text class='info_item_value'>{{ filter.nullFormat(material.technologyStandard)}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>批次号</text>
+                <text class='info_item_value'>{{ filter.nullFormat(material.batchNum)}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>序列号</text>
+                <text class='info_item_value'>{{ filter.nullFormat(material.serialNum)}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box' style="padding-bottom: 20px;">
+    <view class='wx_title'>支柱信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>单位工程</text>
+                <text class='info_item_value'>{{ filter.nullFormat(info.engineeringUnitName)}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>支柱号</text>
+                <text class='info_item_value'>{{ filter.nullFormat(info.pillarName)}}</text>
+            </view>
+        </view>
+    </view>
+</view>

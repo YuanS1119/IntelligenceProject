@@ -1,0 +1,27 @@
+<view class="title">{{info.msgTitle}}</view>
+<view class="content">
+    <rich-text nodes="{{info.msgContent}}"></rich-text>
+</view>
+
+<view class="images">
+    <view class="image_item" wx:for="{{info.msgPictureUrlList}}" wx:key="key">
+        <image class='image_item_img' src='{{item}}'
+               mode="aspectFit"
+               data-index="{{index}}"
+               bindtap="show_image"></image>
+    </view>
+</view>
+
+<scroll-view
+        class="image_detail"
+        scroll-y="true"
+        animation="{{animationData}}"
+        bindtap="hide_image"
+        scroll-top="{{scroll_top}}"
+>
+    <view  class="image_detail_box">
+        <image class='image_detail_info' src='{{check_image}}' mode="widthFix"></image>
+    </view>
+
+</scroll-view>
+

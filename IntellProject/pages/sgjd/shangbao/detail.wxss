@@ -1,0 +1,11 @@
+.list_item{min-height: 55px;height: auto;}
+.list_item .info_item.text_info text{flex: 1}
+.list_item .info_item.text_info {
+    /*display: block;*/
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    min-height: 55px;
+    line-height: 25px;
+}

@@ -1,0 +1,32 @@
+.box{background: white;width: 100%;overflow: hidden;}
+
+
+.total_value{padding: 10px 20px;box-sizing: border-box;border-bottom: 1px solid #ddd;}
+.h1{height: 30px;font-size: 16px;color: #333;line-height: 30px;text-align: center;font-family: '黑体'}
+.percentage{margin-top: 10px;position: relative;height: 20px;line-height: 20px;}
+.percentage text{width: 50px;position: absolute;margin-left: -25px;text-align: center;}
+.percentage_img_box{width: 100%;height: 10px;border-radius: 5px;background: #efefef;margin: 5px 0;}
+.percentage_img_info{height: 10px;border-radius: 5px;background: #008fff;}
+
+.chart{width: 100%;height: 300px;padding-bottom: 10px;}
+.chart_title{height: 50px;line-height: 50px;font-size: 16px;color: #333;text-align: center;font-family: '黑体'}
+.scrollview{width: 100%;height: 260px;}
+.chart_box{height: 260px;min-width: 100%;}
+.legend{height: 40px;position: relative;}
+.legend_box{height: 20px;width: 120px;position: absolute;left: 50%;top: 50%;margin-left: -60px;margin-top: -10px;}
+.legend_item{width: 60px;float: left;}
+.legend_item view{width: 20px;height: 14px;border-radius: 2px;background: red;float: left;margin-top: 5px;margin-right: 3px;}
+.legend_item text{font-size: 12px;line-height: 20px;}
+
+.local_project{
+    line-height: 25px;
+    padding: 15px 15px;
+
+    background: white;
+    font-size: 17px;
+    box-sizing: border-box;
+}
+.lines_hidden {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}

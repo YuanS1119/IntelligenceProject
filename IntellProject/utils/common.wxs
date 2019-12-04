@@ -1,0 +1,10 @@
+
+var filter = {
+	nullFormat: function(value){
+		return value == null || value == 'null' ? '' : value;
+	}
+}
+// 导出对外暴露的属性
+module.exports = {
+	nullFormat: filter.nullFormat
+}

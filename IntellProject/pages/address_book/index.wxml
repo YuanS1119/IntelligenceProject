@@ -1,0 +1,39 @@
+<view class="search_box">
+    <image src="/images/search.png"></image>
+    <input type="text"
+           class="search_input fc_black"
+           placeholder="请输入关键字搜索联系人"
+           placeholder-class="fc_light"
+           bindinput="setKeyword"
+           value="{{keyword}}"/>
+</view>
+<view class="wx_title header">{{now_code}}</view>
+<scroll-view class="scrollview"
+             scroll-y
+             scroll-with-animation
+             scroll-into-view="{{toView}}"
+             bindscroll="scroll">
+    <block wx:for="{{users}}" wx:key="code">
+        <view class="box" wx:if="{{item.lists.length > 0}}" id="box{{item.code}}">
+            <view class="wx_title">{{item.code}}</view>
+            <view class="list_box">
+                <block wx:for="{{item.lists}}"
+                       wx:key="procedureCode"
+                       wx:for-item="item1"
+                       wx:for-index="index1">
+                    <navigator url='/pages/address_book/detail?id={{item1.id}}'  class="list_item">
+                        <view class="info_item">
+                            <text class='info_item_key'>{{item1.name}}</text>
+                        </view>
+                    </navigator>
+                </block>
+            </view>
+        </view>
+    </block>
+</scroll-view>
+<view class="right_box">
+    <block wx:for="{{lists}}"  wx:key="code">
+        <view class="right_item active"  data-index="{{index}}" wx:if="{{item.code == now_code}}" bindtap="check_item">{{item.code}}</view>
+        <view class="right_item"  data-index="{{index}}" bindtap="check_item" wx:else>{{item.code}}</view>
+    </block>
+</view>

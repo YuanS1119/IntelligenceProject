@@ -1,0 +1,16 @@
+<view wx:if="{{lists.length==0}}" class='no_data'>
+    {{loading?'正在加载' :'暂无数据'}}
+</view>
+<view wx:else class="function_box">
+    <block wx:for="{{lists}}" wx:key="{{index}}">
+        <navigator class='function_item' url='/pages/sgjd/shangbao/edit?id={{item.id}}'
+                   open-type="navigate">
+            <image class='item_img' src='/images/todo1.png' mode="aspectFit"></image>
+            <view class="item_cnt">
+                <view class='item_t1'>{{item.operationName}}</view>
+                <view class='item_t2'>{{item.createrName}}  {{item.constructionDate}}</view>
+            </view>
+        </navigator>
+    </block>
+</view>
+<view class="weui-loadmore" hidden="{{isHideLoadMore}}">正在加载</view>

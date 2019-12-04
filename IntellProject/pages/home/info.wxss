@@ -1,0 +1,3 @@
+/* pages/home/info.wxss */
+/* .title{padding: 0 10px;height: 60px;background: #ededed;text-align: center;line-height: 60px;font-size: 18px;} */
+.p{padding: 0 10px;font-size: 18px;margin-top: 30rpx;text-indent: 32px;line-height: 1.4;color: #353535;}

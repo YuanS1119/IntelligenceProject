@@ -1,0 +1,3 @@
+.logout{background: white;color: red;}
+.slide-image{width: 750rpx;height: 100%;display: block;}
+.list_box{margin-top: 20px;}

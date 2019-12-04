@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "未提交上报",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

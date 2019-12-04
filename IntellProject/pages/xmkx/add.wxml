@@ -1,0 +1,119 @@
+<view class='box'>
+    <view class='wx_title'>项目信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>当前项目</text>
+                <view class='info_item_value'>{{local_project.projectAbbreviation}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='box'>
+    <view class='wx_title'>快讯信息</view>
+    <view class="form_box">
+        <view class="info_item">
+            <text class='info_item_key'>快讯标题</text>
+            <view class='info_item_value'>
+                <input
+                        class="form_input"
+                        placeholder="请输入快讯标题"
+                        placeholder-class="phcolor"
+                        bindinput="input_value"
+                        data-key="title"
+                        value="{{title}}"
+                />
+            </view>
+        </view>
+        <view class="info_item">
+            <text class='info_item_key'>快讯正文</text>
+            <view class='info_item_value'>
+                <textarea
+                        class="form_text"
+                        placeholder="请输入快讯正文"
+                        placeholder-class="phcolor"
+                        bindinput="input_value"
+                        data-key="text"
+                        auto-height
+                        value="{{text}}">
+                </textarea>
+            </view>
+        </view>
+
+        <view class="info_item">
+            <text class='info_item_key'>快讯类型</text>
+            <view class='info_item_value'>
+                <picker range="{{types}}" range-key="typeName" bindchange="change_type">
+                    <block wx:if="{{check_type==''}}">
+                        请选择快讯类型 >
+                    </block>
+                    <block wx:else>{{ check_type.typeName }} ></block>
+                </picker>
+            </view>
+        </view>
+        <view class="info_item">
+            <text class='info_item_key'>设计专业</text>
+            <view class='info_item_value'>
+                <picker range="{{professional}}" range-key="name" bindchange="change_professional">
+                    <block wx:if="{{check_professional==''}}">
+                        请选择设计专业 >
+                    </block>
+                    <block wx:else>{{ check_professional.name }} ></block>
+                </picker>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>上传图片</view>
+    <view class="images">
+        <view class="image_item" wx:for="{{images}}" wx:key="id">
+            <image class='image_item_img' src='{{item.path}}'
+                   mode="aspectFit"
+                   data-index="{{index}}"
+                   bindtap="show_image"></image>
+            <image class='image_item_delete'
+                   src='/images/xmkx/delete.png'
+                   mode="aspectFit"
+                   data-index="{{index}}"
+                   bindtap="delete_image"
+            ></image>
+        </view>
+        <view class="image_item upload" bindtap="upload_image">
+            <image class='upload_img' src='/images/xmkx/upload.png' mode="aspectFit"></image>
+            <text>上传图片</text>
+        </view>
+    </view>
+</view>
+<view class='box'>
+    <view class='wx_title bt'>现场位置</view>
+    <view class="map">
+        <map
+                id="myMap"
+                style="width: 100%; height: 200px;"
+                latitude="{{latitude}}"
+                longitude="{{longitude}}"
+                markers="{{markers}}"
+                bindregionchange="regionchange"
+        ></map>
+    </view>
+</view>
+
+<view class="buttons_box">
+    <button class='submit save m40a' bindtap='submit' data-status='0'>保存</button>
+    <button class='submit m40a' bindtap='submit' data-status='1'>保存并上报</button>
+</view>
+
+<scroll-view
+        class="image_detail"
+        scroll-y="true"
+        animation="{{animationData}}"
+        bindtap="hide_image"
+        scroll-top="{{scroll_top}}"
+>
+    <view  class="image_detail_box">
+        <image class='image_detail_info' src='{{check_image}}' mode="widthFix"></image>
+    </view>
+
+</scroll-view>

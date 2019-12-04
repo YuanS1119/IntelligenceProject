@@ -1,0 +1,36 @@
+<!--pages/address_book/detail.wxml-->
+<view class="header">
+    <image src="{{info.img == null ? '/images/avatar.png' : info.img}}" class="avatar"></image>
+    <view class="code">{{info.name}}</view>
+    <button bindtap="call">{{info.mobile}}</button>
+</view>
+<view class="info">
+    <view class="items">
+        <view class="item bt">
+            <view class="key">用户姓名</view>
+            <view class="value">{{info.name}}</view>
+        </view>
+        <view class="item bt">
+            <view class="key">用户账号</view>
+            <view class="value">{{info.code}}</view>
+        </view>
+        <view class="item">
+            <view class="key">手机号</view>
+            <view class="value">{{info.mobile}}</view>
+        </view>
+        <block wx:for="{{info.orgList}}" wx:key="proOrgId">
+            <view class="jg"></view>
+            <view class="item">
+                <view class="key">{{index == 0 ? '用户岗位' : ''}}</view>
+                <view class="value">
+                    {{item.proOrgName}}
+                    <block wx:if="{{item.positionList.length > 0}}">
+                        (<block wx:for="{{item.positionList}}" wx:for-item="item1"
+                                wx:for-index="index1">{{index1 == 0 ? '': '、'}}{{item1.positionName}}</block>)
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>

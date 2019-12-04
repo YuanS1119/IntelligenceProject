@@ -1,0 +1,62 @@
+<view class='box'>
+    <view class='wx_title'>二维码信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>杆号SID</text>
+                <text class='info_item_value'>{{code}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='box'>
+    <view class='wx_title'>支柱信息</view>
+    <view class="form_box">
+        <view class="info_item">
+            <text class='info_item_key'>单位工程</text>
+            <view class='info_item_value'>
+                <picker range="{{units}}" range-key="unitName" bindchange="changeUnit">
+                    <block wx:if="{{check_unit==''}}">
+                    请选择工程单位 >
+                    </block>
+                    <block wx:else>{{check_unit.unitName}}</block>
+                </picker>
+            </view>
+        </view>
+        <view class="info_item">
+            <text class='info_item_key'>支柱号</text>
+            <view class='info_item_value'>
+                <view wx:if="{{check_unit==''}}" bindtap="tipCheck">
+                    请选择支柱号 >
+                </view>
+                <view wx:else bindtap="show_picker">
+                    <block wx:if="{{check_pillar==''}}">
+                    请选择支柱号 >
+                    </block>
+                    <block wx:else>{{check_pillar.pillarName}}</block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="buttons_box">
+        <button class='submit' bindtap='submit'>绑定</button>
+    </view>
+</view>
+
+    <view wx:if="{{picker_show}}" class='picker_box'>
+        <view class='picker_cnt'>
+            <view class='picker_cnt_head'>
+                <view class='cancel picker_btn' bindtap='cancel_picker'>取消</view>
+                <input placeholder="输入关键词搜索支柱号" placeholder-class="phcolor"
+                       bindinput="searchZzhs" class="picker_search"
+                >
+                </input>
+                <view class='sure picker_btn' bindtap='sure_picker'>确定</view>
+            </view>
+            <picker-view indicator-style="height: 40px;" class='picker_info' value="{{picker_value}}" bindchange="picker_change">
+                <picker-view-column>
+                    <view wx:for="{{pillars}}" class='picker_info_item'>{{item.pillarName}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>

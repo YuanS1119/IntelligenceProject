@@ -1,0 +1,17 @@
+<view wx:if="{{lists.length==0}}" class='no_data'>
+    {{loading?'正在加载' :'暂无数据'}}
+</view>
+<view wx:else class="list_box">
+    <block wx:for="{{lists}}" wx:key="{{index}}">
+        <navigator url='/pages/feature/construction/edit?id={{item.installInfoId}}' open-type="navigate">
+            <view class='item'>
+                <image class='item_img' src='/images/todo1.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>{{item.engineeringUnitName}}</view>
+                    <view class='item_t2'>{{item.createUserName}}   {{item.time}}</view>
+                </view>
+            </view>
+        </navigator>
+    </block>
+</view>
+<view class="weui-loadmore" hidden="{{isHideLoadMore}}">正在加载</view>

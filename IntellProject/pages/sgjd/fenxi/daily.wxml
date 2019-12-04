@@ -1,0 +1,101 @@
+<!--pages/sgjd/fenxi/daily.wxml-->
+<view wx:if="{{is_loading || error != ''}}" class="no_data">
+    {{is_loading ? '正在加载' : error}}
+</view>
+<block wx:else>
+    <view class="search_box">
+        <view wx:if="{{show_search_box==1}}" class="search_item br color_active" data-item="1"
+              bindtap='show_search_box'>
+            {{check_professional == '' ? '专业' : check_professional.name}}
+            <image class='item_img' src='/images/arrow_top1.png' mode="aspectFit"></image>
+        </view>
+        <view wx:else
+              class="search_item br"
+              data-item="1"
+              bindtap='show_search_box'>
+            {{check_professional == '' ? '专业' : check_professional.name}}
+            <image class='item_img' src='/images/arrow_bottom1.png' mode="aspectFit"></image>
+        </view>
+        <view wx:if="{{show_search_box==2}}" class="search_item color_active" data-item="2" bindtap='show_search_box'>
+            {{check_org == '' ? '全部' : check_org.name}}
+            <image class='item_img' src='/images/arrow_top1.png' mode="aspectFit"></image>
+        </view>
+        <view wx:else class="search_item" data-item="2" bindtap='show_search_box'>
+            {{check_org == '' ? '全部' : check_org.name}}
+            <image class='item_img' src='/images/arrow_bottom1.png' mode="aspectFit"></image>
+        </view>
+    </view>
+    <view wx:if="{{show_search_box==1}}" class="search_info">
+        <view class="search_info_back" bindtap='hide_search_info'></view>
+        <view class="search_info_box">
+            <scroll-view clsss="scrollview" style="height: 155px" scroll-y="true">
+                <view class="search_info_cnt">
+                    <view class="search_title">专业</view>
+                    <view class="items">
+                        <block wx:for="{{professional}}" wx:key="code">
+                            <view wx:if="{{index == checked_index}}" bindtap='check_item' class="item active"
+                                  data-index="{{index}}">{{item.name}}
+                            </view>
+                            <view wx:else class="item" bindtap='check_item' data-index="{{index}}">{{item.name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="search_button">
+                <view class="search_button_item br" bindtap='reset'>重置</view>
+                <view class="search_button_item color_active" bindtap='sure'>确定</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{show_search_box==2}}" class="search_info">
+        <view class="search_info_back" bindtap='hide_search_info'></view>
+        <view class="search_info_box">
+            <scroll-view clsss="scrollview" style="height: 155px" scroll-y="true">
+                <view class="search_info_cnt">
+                    <view class="search_title">分部</view>
+                    <view class="items">
+                        <block wx:for="{{orgs}}" wx:key="sid">
+                            <view wx:if="{{index == checked_index}}" bindtap='check_item' class="item active"
+                                  data-index="{{index}}">{{item.name}}
+                            </view>
+                            <view wx:else class="item" bindtap='check_item' data-index="{{index}}">{{item.name}}</view>
+                        </block>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="search_button">
+                <view class="search_button_item br" bindtap='reset'>重置</view>
+                <view class="search_button_item color_active" bindtap='sure'>确定</view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{check_professional == ''}}" class="no_data">
+        请选择专业
+    </view>
+    <block wx:for="{{lists}}" wx:key="code">
+        <view class='title'>{{item.name}}</view>
+        <view class="info_items">
+            <view class="list_item">
+                <text class='info_item_key'>剩余</text>
+                <view class='info_item_value'>{{item.remainderNum}}({{item.unit}})</view>
+            </view>
+            <view class="list_item">
+                <text class='info_item_key'>完成情况</text>
+                <view class='info_item_value'>
+                    <text class="color_active">{{item.totalFinishNum}}</text>
+                    /{{item.designNum}}
+                </view>
+            </view>
+            <view class="list_item">
+                <text class='info_item_key'>完成率</text>
+                <view class='info_item_value'>
+                    <text class="color_active">{{item.finishRate}}</text>
+                    %
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="weui-loadmore" hidden="{{isHideLoadMore}}">正在加载...</view>
+</block>
+
+

@@ -1,0 +1,97 @@
+<wxs module="filter" src="../../utils/common.wxs"></wxs>
+
+<view class="wx_title">
+    工程项目
+    <text class="fr">(上报数据最后更新于{{currentDate}})</text>
+</view>
+<view class="info_item local_project">
+    <view class=" lines_hidden">
+        {{local_project.projectAbbreviation}}
+    </view>
+</view>
+<view class="wx_title">
+    产值
+</view>
+<view class="box">
+    <view class="chart_title">分月产值数据</view>
+    <view class="chart bt" wx:if="{{value_by_month.length > 0 && ec != ''}}">
+        <view class="chart_box">
+            <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+        </view>
+        <view class="legend">
+            <view class="legend_box">
+                <view class="legend_item"><view style="background: #d1edff"></view><text>计划</text></view>
+                <view class="legend_item"><view style="background: #008fff"></view><text>实际</text></view>
+            </view>
+        </view>
+    </view>
+    <view wx:else class="no_data bt">
+        暂无数据
+    </view>
+    <view class="total_value">
+
+        <view class="h1">总体产值数据</view>
+        <block wx:if="{{total_value.planTotalValue!=null}}">
+        <view class="percentage"><text style="{{total_value.totalFinishStyle}}">{{total_value.totalFinishPercentage}}</text></view>
+        <view class="percentage_img_box"><view class="percentage_img_info" style="width:{{total_value.totalFinishPercentage}}"></view></view>
+        <view class="h1">{{total_value.actualTotalValue}} / {{total_value.planTotalValue}}</view>
+        </block>
+        <view wx:else class="no_data">
+            暂无数据
+        </view>
+    </view>
+    <view class="list_box" wx:if="{{total_value.planTotalValue!=null && total_value.planTotalValue!=undefined}}">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>当月产值</text>
+                <view class='info_item_value'>{{total_value.monthActualValue}}(完成{{total_value.monthFinishPercentage}})</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>当季累计产值</text>
+                <view class='info_item_value'>{{total_value.quarterActualValue}}(完成{{total_value.quarterFinishPercentage}})</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>当年累计产值</text>
+                <view class='info_item_value'>{{total_value.yearActualValue}}(完成{{total_value.quarterFinishPercentage}})</view>
+            </view>
+        </view>
+    </view>
+</view>
+<block wx:for="{{resource}}" wx:key="dataKey">
+    <view class="box">
+        <view class="wx_title">{{item.dataKey}}</view>
+        <view class="list_box">
+            <block wx:for="{{item.dataValueList}}"
+                   wx:for-index="index1"
+                   wx:for-item="item1"
+                   wx:key="{{item.dataKey}}">
+                <view wx:if="{{item1.dataForwardSign == '1'}}"  class="list_item">
+                    <view class="info_item">
+                        <text class='info_item_key'>{{item1.dataKey}}</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item1.dataValue)}}</view>
+                    </view>
+                </view>
+
+                <view wx:else
+                        data-url='/pages/index/week_data?type={{item1.dataForwardSignType}}&title={{item1.dataKey}}'
+                        class="list_item"
+                      bindtap="go_week"
+                >
+                    <view class="info_item">
+                        <text class='info_item_key'>{{item1.dataKey}}</text>
+                        <image src="/images/arrow_right.png" class="navigator_right"></image>
+                    </view>
+                </view>
+            </block>
+            <view wx:if="{{item.dataValueList.length == 0}}"  class="list_item">
+                <view class="info_item">
+                    <text class='info_item_key'>{{item.statusMsg}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

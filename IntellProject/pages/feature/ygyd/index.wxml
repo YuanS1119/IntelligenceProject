@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='box'>
+        <view class='wx_title'>二维码绑定</view>
+        <view class='function_box'>
+            <view class='function_item' bindtap='scanCode'>
+                <image class='item_img' src='/images/sscan.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>绑定</view>
+                    <view class='item_t2'>将物料与二维码绑定，并补充档案中必要信息</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class='box'>
+        <view class='wx_title'>档案查询</view>
+        <view class='function_box'>
+            <view class='function_item' bindtap='scanCodeWeb'>
+                <image class='item_img' src='/images/report1.png' mode="aspectFit"></image>            
+                <view class="item_cnt">
+                    <view class='item_t1'>支柱档案查询</view>
+                    <view class='item_t2'>查询接触网支柱的档案信息</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+

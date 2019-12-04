@@ -1,0 +1,218 @@
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+<view wx:if="{{check_wl==false}}">
+<view wx:if="{{picker_show}}" class='picker_box'>
+        <view class='picker_cnt'>
+            <view class='picker_cnt_head'>
+                <view class='cancel picker_btn' bindtap='cancel_picker'>取消</view>
+                <input placeholder="输入关键词搜索支柱号" placeholder-class="phcolor"
+                       bindinput="searchZzhs" class="picker_search"
+                >
+                </input>
+                <view class='sure picker_btn' bindtap='sure_picker'>确定</view>
+            </view>
+            <picker-view indicator-style="height: 40px;" class='picker_info' value="{{picker_value}}" bindchange="picker_change">
+                <picker-view-column>
+                    <view wx:for="{{zzhs}}" class='picker_info_item'>{{item.pillarName}}</view>
+                </picker-view-column>
+            </picker-view>
+        </view>
+    </view>
+    <view class='box'>
+        <view class='title'>作业队</view>
+        <view class="info_items">
+            <view class="info_item">
+                <text class='info_item_key'>作业队</text>
+                <view class='info_item_value'>
+                    <picker range="{{operations}}" range-key="operationVoName" bindchange="changeOperation">
+                        <block wx:if="{{check_operation==''}}">
+                            请选择作业队 >
+                        </block>
+                        <block wx:else>{{ filter.nullFormat(check_operation.operationVoName)}} ></block>
+                    </picker>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='box'>
+        <view class='title'>单位工程</view>
+        <view class="info_items">
+            <view class="info_item">
+                <text class='info_item_key'>专业</text>
+                <view class='info_item_value'>
+                    <view wx:if="{{check_operation==''}}" bindtap="tipCheck" data-key='major'>
+                        请选择专业 >
+                    </view>
+                    <picker wx:else range="{{majors}}" range-key="majorName" bindchange="changeMajor">
+                        <block wx:if="{{check_major==''}}">请选择专业 ></block>
+                        <block wx:else>{{ filter.nullFormat(check_major.majorName)}} ></block>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="info_item">
+                <text class='info_item_key'>单位工程</text>
+                <view class='info_item_value'>
+                    <view wx:if="{{check_major==''}}" bindtap="tipCheck" data-key='unit'>
+                        请选择单位工程 >
+                    </view>
+                    <picker wx:else range="{{units}}" range-key="engineeringName" bindchange="changeUnit">
+                        <block wx:if="{{check_unit==''}}">
+                            请选择单位工程 >
+                        </block>
+                        <block wx:else>{{ filter.nullFormat(check_unit.engineeringName)}} ></block>
+                    </picker>
+                </view>
+            </view>
+
+            <view class="info_item" wx:if="{{check_major.majorCode=='cjw'}} && check_unit != ''">
+                <text class='info_item_key'>支柱号</text>
+                <view class='info_item_value'>
+                    <view bindtap="scanZzh">
+                        <block wx:if="{{check_pillarSid==''}}">请选择支柱号 ></block>
+                        <block wx:else>{{ filter.nullFormat(check_pillarSid.pillarName)}} ></block>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class='box'>
+        <view class='title'>分项工程</view>
+        <view class="info_items">
+            <view class="info_item">
+                <text class='info_item_key'>分项工程名称</text>
+                <view class='info_item_value'>
+                    <view wx:if="{{check_unit==''}}" bindtap="tipCheck" data-key='subitem'>
+                        请选择分项工程 >
+                    </view>
+                    <picker wx:else range="{{subitems}}" range-key="subItemName" bindchange="changeSubitem">
+                        <block wx:if="{{check_subitem==''}}">
+                            请选择分项工程 >
+                        </block>
+                        <block wx:else>{{ filter.nullFormat(check_subitem.subItemName)}} ></block>
+                    </picker>
+                </view>
+            </view>
+            <block wx:if="{{check_unit!=''}}">
+                <view class="info_item">
+                    <text class='info_item_key'>设计数量</text>
+                    <view class='info_item_value'>{{ filter.nullFormat(check_subitem.subItemDesignNum)}}</view>
+                </view>
+                <view class="info_item">
+                    <text class='info_item_key'>剩余数量</text>
+                    <view class='info_item_value'>{{ filter.nullFormat(leftnum)}}</view>
+                </view>
+                <view class="info_item">
+                    <text class='info_item_key'>单位</text>
+                    <view class='info_item_value'>{{ filter.nullFormat(check_subitem.subItemUnit)}}</view>
+                </view>
+                <view class="info_item">
+                    <text class='info_item_key'>本次完工数量</text>
+                    <view class='info_item_value'>
+                        <input type="digit"
+                               class="form_input"
+                               placeholder="请填写本次完工数量"
+                               placeholder-class="phcolor"
+                               bindinput="setFinishNum"
+                               value="{{finishNum}}">
+                        </input>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+
+    <view class='box'>
+        <view class='title'>物料信息</view>
+        <view class='info_items mb5' wx:for="{{wls}}" wx:key="{{index}}">
+            <view class="info_item">
+                <text class='info_item_key'>物料名称</text>
+                <view class='info_item_value wzmc'>{{ filter.nullFormat(item.materialName)}}
+                    <view class='delete' data-sid="{{item.stockSid}}" bindtap='deleteWl'>删除</view>
+                </view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>库存</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.stockNum)}}</view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>规格型号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.specificationsModel)}}</view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>技术标准</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.technologyStandard)}}</view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>批次号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.batchNum)}}</view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>序列号</text>
+                <view class='info_item_value'>{{ filter.nullFormat(item.serialNum)}}</view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>消耗数量</text>
+                <view class='info_item_value'>
+                    <input type="digit"
+                           class="form_input"
+                           placeholder="数量"
+                           placeholder-class="phcolor"
+                           bindinput="setWlNum"
+                           data-sid="{{item.stockSid}}"
+                           value="{{item.consumNum}}">
+                    </input>
+                </view>
+            </view>
+        </view>
+        <view  class="info_item">
+            <view class='hbt scan_add fl' bindtap='scanAdd'>扫码增加</view>
+            <view class='hbt sc_add fl'   bindtap='sgAdd'>手工添加</view>
+        </view>
+    </view>
+
+    <view style='padding-bottom:40rpx;'>
+        <button class='submit m40a' bindtap='submit' data-status='0'>保存</button>
+        <button class='submit m40a' bindtap='submit' data-status='1'>提交</button>
+    </view>
+</view>
+<view wx:else class='check_box'>
+    <view class='c_box'>
+        <checkbox-group bindchange="checkboxChange">
+            <view class='info_items mb5 wls' wx:for="{{operation_wls}}" wx:key="{{index}}">
+                <label>
+                    <checkbox value="{{item.stockSid}}" class='checkbox_item' checked="{{item.check_status}}"/>
+                    <view class="info_item">
+                        <text class='info_item_key'>物料名称</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item.materialName)}}</view>
+                    </view>
+                    <view class="info_item">
+                        <text class='info_item_key'>库存</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item.stockNum)}}</view>
+                    </view>
+                    <view class="info_item">
+                        <text class='info_item_key'>规格型号</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item.specificationsModel)}}</view>
+                    </view>
+                    <view class="info_item">
+                        <text class='info_item_key'>技术标准</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item.technologyStandard)}}</view>
+                    </view>
+                    <view class="info_item">
+                        <text class='info_item_key'>批次号</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item.batchNum)}}</view>
+                    </view>
+                    <view class="info_item">
+                        <text class='info_item_key'>序列号</text>
+                        <view class='info_item_value'>{{ filter.nullFormat(item.serialNum)}}</view>
+                    </view>
+                </label>
+            </view>
+        </checkbox-group>
+    </view>
+    <view class='b_box'>
+        <button class='submit check_button' bindtap='sureCheck'>确定</button>
+        <button class="submit cancel" bindtap='cancelCheck'>取消</button>
+    </view>
+</view>

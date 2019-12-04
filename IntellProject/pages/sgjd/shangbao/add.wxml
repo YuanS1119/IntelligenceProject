@@ -1,0 +1,99 @@
+<!--pages/sgjd/shangbao/add.wxml-->
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+<view wx:if="{{error != ''}}" class="no_data">{{error}}</view>
+<view wx:else>
+    <view class='box'>
+        <view class='wx_title'>基础信息</view>
+        <view class="form_box bt">
+            <view class="info_item">
+                <text class='info_item_key'>作业队</text>
+                <view class='info_item_value'>
+                    <picker range="{{operations}}" range-key="name" bindchange="changeOperation">
+                        <block wx:if="{{check_operation==''}}">
+                            请选择作业队 >
+                        </block>
+                        <block wx:else>{{ filter.nullFormat(check_operation.name)}} ></block>
+                    </picker>
+                </view>
+            </view>
+            <view class="info_item">
+                <text class='info_item_key'>施工日期</text>
+                <view class='info_item_value'>
+                    <block wx:if="{{is_filling==1}}">
+                        <view bindtap="shop_date_tip">
+                        {{ filter.nullFormat(constructionDate)}}
+                        </view>
+                    </block>
+                    <picker wx:else start="2000-01-01" end="2100-12-31"
+                            value="{{constructionDate}}"
+                            mode="date" bindchange="changeDate">
+                        <block wx:if="{{constructionDate==''}}">
+                            请选择施工日期 >
+                        </block>
+                        <block wx:else>{{ filter.nullFormat(constructionDate)}} ></block>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="form_box">
+            <view class="info_item">
+                <textarea
+                    class="form_text"
+                    placeholder="请填写备注信息"
+                    auto-height
+                    placeholder-class="phcolor"
+                    bindinput="setRemark"
+                    value="{{remark}}">
+                </textarea>
+            </view>
+        </view>
+        <view class='wx_title'>上报明细<button class="change_type" bindtap="change_type">切换至-{{type==0?'全部':'默认'}}</button></view>
+        <block wx:if="{{check_operation==''}}">
+            <view class="no_data">
+                请选择作业队
+            </view>
+        </block>
+        <view class="list_box">
+            <block wx:for="{{qjs}}" wx:key="desc">
+                <block wx:if="{{item.display == 1}}">
+                    <view class="list_item" data-key="{{index}}" bindtap='toggle_item'>
+                        <view class="info_item text_info">
+                            <text>{{item.desc}}</text>
+                            <image wx:if="{{item.show==1}}" class='navigator_right' src='/images/arrow_top.png' mode="aspectFit"></image>
+                            <image wx:else class='navigator_right' src='/images/arrow_bottom.png' mode="aspectFit"></image>
+                        </view>
+                    </view>
+                    <block wx:if="{{item.show == 1}}">
+                        <block wx:for="{{item.items}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+                            <block wx:if="{{item1.total!=null}}">
+                                <view class="list_item">
+                                    <view class="info_item text_info">
+                                        <text class="fc_grey">{{item1.desc}}({{item1.left}}/{{item1.total}})</text>
+                                    </view>
+                                </view>
+                                <view class="list_item">
+                                    <view class="info_item">
+                                    <input type="digit"
+                                           class="form_input"
+                                           placeholder="数量"
+                                           placeholder-class="phcolor"
+                                           bindinput="setValue"
+                                           data-key1="{{index}}"
+                                           data-key2="{{index1}}"
+                                           value="{{item1.value}}"/>
+                                    </view>
+                                </view>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </view>
+    </view>
+    <view class="buttons_box_bac"></view>
+    <view class="buttons_box">
+        <button class='submit save m40a' bindtap='submit' data-status='0'>保存</button>
+        <button class='submit m40a' bindtap='submit' data-status='1'>提交</button>
+    </view>
+</view>
+

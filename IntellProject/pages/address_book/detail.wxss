@@ -1,0 +1,12 @@
+page{background: white;}
+.header{background: #5dc9d3;height: 250px;box-sizing: border-box;padding: 50px;}
+.header image{width: 90px;height: 90px;display: block;border-radius: 50%;margin: 0 auto;}
+.header .code{height: 20px;line-height: 20px;text-align: center;font-size: 14px;}
+.header button{width: 200px;margin-top: 20px;height: 40px;line-height: 40px;border-radius: 18px;background: black;color: white;font-size: 14px;text-decoration: underline;}
+.item{min-height: 55px;display: flex;line-height: 55px;font-size: 17px;align-items: center;}
+.item .key{width: 100px;box-sizing: border-box;padding-left: 10px;color: #333;}
+.item .value{color: #999;flex: 1;padding: 15px 15px 15px 0;line-height: 25px}
+.jg{height: 10px;background: #fafafa;}
+
+
+

@@ -1,0 +1,95 @@
+<view class='box'>
+    <view class='wx_title'>二维码信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>杆号SID</text>
+                <text class='info_item_value'>{{code}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='box'>
+    <view class='wx_title'>支柱信息</view>
+    <view class="form_box">
+        <view class="info_item">
+            <text class='info_item_key'>施工专业</text>
+            <view class='info_item_value'>
+                <picker range="{{majors}}" range-key="majorName" bindchange="changeMajor">
+                <block wx:if="{{check_major==''}}">
+                    请选择施工专业 >
+                    </block>
+                    <block wx:else>{{check_major.majorName}} ></block>
+                </picker>
+            </view>
+        </view>
+        <view class="info_item">
+            <text class='info_item_key'>单位工程</text>
+            <view class='info_item_value'>
+                <view wx:if="{{check_major==''}}" bindtap="tipCheck">
+                    请选择单位工程 >
+                </view>
+                <picker wx:else range="{{units}}" range-key="unitName" bindchange="changeUnit">
+                    <block wx:if="{{check_unit==''}}">
+                    请选择单位工程 >
+                    </block>
+                    <block wx:else>{{check_unit.unitName}} ></block>
+                </picker>
+            </view>
+        </view>
+        <view class="info_item">
+            <text class='info_item_key'>设备类型</text>
+            <view class='info_item_value'>
+                <view wx:if="{{check_major==''}}" bindtap="tipCheck">
+                请选择设备类型 >
+                </view>
+                <picker wx:else range="{{device_types}}" range-key="deviceTypeName" bindchange="changeDeviceType">
+                    <block wx:if="{{check_device_type==''}}">
+                    请选择设备类型 >
+                    </block>
+                    <block wx:else>{{check_device_type.deviceTypeName}} ></block>
+                </picker>
+            </view>
+        </view>
+                <view class="info_item">
+            <text class='info_item_key'>设备编号</text>
+            <view class='info_item_value'>
+                <input 
+                    class="form_input" 
+                    placeholder="请填写设备编号"
+                    placeholder-class="phcolor" 
+                    bindinput="setDeviceCode" 
+                    value="{{device_code}}">
+                </input>
+            </view>
+        </view>
+                <view class="info_item">
+            <text class='info_item_key'>设备名称</text>
+            <view class='info_item_value'>
+                <input 
+                    class="form_input" 
+                    placeholder="请填写设备名称"
+                    placeholder-class="phcolor" 
+                    bindinput="setDeviceName" 
+                    value="{{device_name}}">
+                </input>
+            </view>
+        </view>
+                <view class="info_item">
+            <text class='info_item_key'>设备型号</text>
+            <view class='info_item_value'>
+                <input 
+                    class="form_input" 
+                    placeholder="请填写设备型号"
+                    placeholder-class="phcolor" 
+                    bindinput="setDeviceXh" 
+                    value="{{device_xh}}">
+                </input>
+            </view>
+        </view>
+    </view>
+    <view class="buttons_box">
+        <button class='submit' bindtap='submit'>绑定</button>
+    </view>
+
+</view>

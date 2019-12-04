@@ -1,0 +1,53 @@
+<view class='box'>
+    <view class='wx_title'>二维码信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>杆号SID</text>
+                <text class='info_item_value'>{{code}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>支柱信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>施工专业</text>
+                <text class='info_item_value'>{{info.majorName}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>单位工程</text>
+                <text class='info_item_value'>{{info.unitName}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>设备类型</text>
+                <text class='info_item_value'>{{info.deviceTypeName}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>设备编号</text>
+                <text class='info_item_value'>{{info.deviceCode}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>设备名称</text>
+                <text class='info_item_value'>{{info.deviceName}}</text>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>设备型号</text>
+                <text class='info_item_value'>{{info.deviceModel}}</text>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+<view class='box'>
+    <image src='/images/bg_login2.png' class='bac_img'></image>
+    <view class='form'>
+        <view class='form_item'>
+            <input type="text" 
+                class="form_input"  placeholder="用户名/手机号" placeholder-class="phcolor" 
+                bindinput="setUsername" 
+                value="{{username}}">
+            </input>
+            <button class='clear_btn' wx:if="{{username!=''}}" bindtap='clearInput' data-key='username'>
+                <image src='/images/icon_cuowu.png' class='clear_img'></image>
+            </button>
+        </view>
+        <view class='form_item'>
+            <input type="password" 
+                class="form_input" 
+                placeholder="密码"
+                placeholder-class="phcolor" 
+                bindinput="setPwd" 
+                value="{{pwd}}">
+            </input>
+            <button class='clear_btn' wx:if="{{pwd!=''}}" bindtap="clearInput" data-key='pwd'>
+                <image src='/images/icon_cuowu.png' class='clear_img'></image>
+            </button>
+        </view>
+        <button bindtap="doLogin" class='login'>登   录</button>
+    </view>
+</view>

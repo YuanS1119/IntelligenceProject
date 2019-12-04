@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "所有快讯",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/login",
+    "pages/feature/index",
+    "pages/feature/ytyd/index",
+    "pages/feature/construction/index",
+    "pages/feature/ygyd/index",
+    "pages/feature/ygyd/bind",
+    "pages/web/web",
+    "pages/feature/ygyd/info",
+    "pages/feature/ytyd/info",
+    "pages/feature/ytyd/bind",
+    "pages/feature/construction/bind",
+    "pages/feature/construction/info",
+    "pages/feature/construction/add",
+    "pages/feature/construction/wait_list",
+    "pages/feature/construction/history_list",
+    "pages/feature/construction/edit",
+    "pages/feature/construction/info_detail",
+    "pages/home/home",
+    "pages/home/info",
+    "pages/sgjd/index",
+    "pages/sgjd/shangbao/add",
+    "pages/sgjd/shangbao/edit",
+    "pages/sgjd/shangbao/wait_list",
+    "pages/sgjd/shangbao/history_list",
+    "pages/sgjd/shangbao/detail",
+    "pages/sgjd/xingxiang/add",
+    "pages/sgjd/xingxiang/edit",
+    "pages/sgjd/xingxiang/wait_list",
+    "pages/sgjd/fenxi/daily",
+    "pages/sgjd/fenxi/jindu",
+    "pages/xmkx/index",
+    "pages/xmkx/my_list",
+    "pages/xmkx/add",
+    "pages/xmkx/edit",
+    "pages/xmkx/detail",
+    "pages/address_book/index",
+    "pages/address_book/detail",
+    "pages/message/lists",
+    "pages/message/detail",
+    "pages/index/week_data",
+    "pages/sgjd/xingxiang/check_pole",
+    "pages/punch/index",
+    "pages/punch/date",
+    "pages/punch/success",
+    "pages/labor/index",
+    "pages/feature/ygyd/detail",
+    "pages/feature/ytyd/detail",
+    "pages/xmkx/function"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f9f9f9",
+    "navigationBarTitleText": "项目智能管理系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#333",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "项目首页",
+        "iconPath": "images/tab_home.png",
+        "selectedIconPath": "images/tab_home_selected.png"
+      },
+      {
+        "pagePath": "pages/feature/index",
+        "text": "施工作业",
+        "iconPath": "images/tab_date.png",
+        "selectedIconPath": "images/tab_date_selected.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "设置与帮助",
+        "iconPath": "images/tab_user.png",
+        "selectedIconPath": "images/tab_user_selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要获取您的地理位置，请确认授权，否则无法获取您所需数据"
+    }
+  }
+}

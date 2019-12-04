@@ -1,0 +1,42 @@
+<view class="wx_title">我的消息</view>
+<view class="list_box">
+    <navigator class="list_item"
+               wx:for="{{message}}" wx:key="sid"
+               url='/pages/message/detail?id={{item.sid}}'>
+        <view class="info_item">
+            <image src="/images/alert.png" class="alert"></image>
+            <view class='info_item_key'>{{item.msgTitle}}</view>
+            <image src="/images/arrow_right.png" class="navigator_right"></image>
+        </view>
+    </navigator>
+    <view class="list_item"  wx:if="{{message.length==0}}">
+        <view class="info_item">
+            <view class='info_item_key'>暂时没有消息</view>
+        </view>
+    </view>
+    <block wx:else>
+        <navigator class="list_item" url='/pages/message/lists' >
+            <view class="info_item">
+                <view class='info_item_key'>查看全部消息</view>
+                <image src="/images/arrow_right.png" class="navigator_right"></image>
+            </view>
+        </navigator>
+    </block>
+
+</view>
+
+<block wx:for="{{functions}}" wx:key="title">
+    <view class="wx_title">{{item.title}}</view>
+    <view class='items clearfix'>
+        <block wx:for="{{item.lists}}" wx:for-item="item1" wx:for-index="index1" wx:key="name">
+            <view data-url='{{item1.url}}?name={{item1.name}}'  bindtap="go_link" class='ws3 fl item' wx:if="{{item1.url != ''}}">
+                <image class='item_img' src='{{item1.img}}' mode="aspectFit"></image>
+                <view class='item_txt'>{{item1.name}}</view>
+            </view>
+            <view class="ws3 fl item" bindtap="no_power" wx:else>
+                <image class='item_img' src='{{item1.img}}' mode="aspectFit"></image>
+                <view class='item_txt'>{{item1.name}}</view>
+            </view>
+        </block>
+    </view>
+</block>

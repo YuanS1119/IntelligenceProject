@@ -1,0 +1,17 @@
+<view>
+    <view class="title">打卡成功</view>
+
+    <view class="address">
+        <view class="item">
+            <image src="/images/punch/location.png"></image>
+            <view>{{address}}</view>
+        </view>
+        <view class="item">
+            <image src="/images/punch/time.png"></image>
+            <view class="time">{{time}}</view>
+        </view>
+    </view>
+    <view class="back">
+        <button bindtap="back">返回</button>
+    </view>
+</view>

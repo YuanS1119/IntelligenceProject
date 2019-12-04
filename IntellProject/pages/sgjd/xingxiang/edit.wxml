@@ -1,0 +1,59 @@
+<!--pages/sgjd/xingxiang/add.wxml-->
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+
+<view class='box'>
+    <view class="form_box">
+        <view class="info_item">
+            <text class='info_item_key'>作业队</text>
+            <view class='info_item_value'>
+                <picker range="{{operations}}" range-key="name" bindchange="checkOperationTeam">
+                    <block wx:if="{{check_operation==''}}">
+                        请选择作业队 >
+                    </block>
+                    <block wx:else>{{ filter.nullFormat(check_operation.name)}} ></block>
+                </picker>
+            </view>
+        </view>
+        <view class="info_item">
+            <text class='info_item_key'>单位工程</text>
+            <view class='info_item_value'>
+                <picker range="{{units}}" range-key="name" bindchange="checkUnit">
+                    <block wx:if="{{check_unit==''}}">
+                        请选择单位工程 >
+                    </block>
+                    <block wx:else>{{ filter.nullFormat(check_unit.name)}} ></block>
+                </picker>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{check_unit!='' && ChartsModelAndProcedures.length > 0 }}">
+        <block wx:for="{{ChartsModelAndProcedures}}" wx:key="modelCode">
+            <view class='wx_title'>{{ item.modelName }}</view>
+            <view class="form_box">
+                <view class="info_item"
+                      data-key1="{{index}}"
+                      data-key2="{{index1}}"
+                      bindtap='goCheckPole'
+                      wx:for="{{item.procedureAndPoleList}}"
+                      wx:key="procedureCode"
+                      wx:for-item="item1"
+                      wx:for-index="index1">
+                    <text class='info_item_key'>{{item1.procedureName}}</text>
+                    <view class='info_item_value'>
+                        <block wx:if="{{item1.checkedPoles==undefined || item1.checkedPoles.length == 0}}">
+                            请选择 >
+                        </block>
+                        <block wx:else>
+                            已选择{{item1.checkedPoles.length}}个 >
+                        </block>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="buttons_box">
+            <button class='submit save m40a' bindtap='submit' data-status='0'>保存</button>
+            <button class='submit m40a' bindtap='submit' data-status='1'>提交</button>
+        </view>
+    </block>
+</view>
+

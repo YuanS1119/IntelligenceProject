@@ -1,0 +1,49 @@
+<view>
+    <view class="head">
+        <view class="calendar">
+            <navigator url='/pages/punch/date' open-type="navigate">
+                <image src="/images/punch/calendar.png"></image>
+                打卡记录
+            </navigator>
+        </view>
+    </view>
+
+    <view class="address">
+        <view class="item">
+            <image src="/images/punch/location.png"></image>
+            <view>{{address}}</view>
+        </view>
+        <view class="item">
+            <image src="/images/punch/time.png"></image>
+            <view class="time">{{time}}</view>
+        </view>
+    </view>
+    <view class="box">
+        <button class="dk" bindtap="do_dk" data-type="0">
+            <image src="/images/punch/finger.png"></image>
+            <text>上班卡</text>
+        </button>
+        <button class="dk" bindtap="do_dk" data-type="1">
+            <image src="/images/punch/finger.png"></image>
+            <text>下班卡</text>
+        </button>
+    </view>
+    <view class="last address">
+        <view class="title">上次打卡信息
+            <block wx:if="{{lastInfo != ''}}">({{lastInfo.attendanceType == 0 ? '上班卡' : '下班卡'}})</block>
+        </view>
+        <block wx:if="{{lastInfo != ''}}">
+            <view class="item1 item">
+                <image src="/images/punch/location.png"></image>
+                <view>{{lastInfo.attendanceStie}}</view>
+            </view>
+            <view class="item1 item">
+                <image src="/images/punch/time.png"></image>
+                <view class="time">{{lastInfo.attendanceTime}}</view>
+            </view>
+        </block>
+        <view class="no_data" wx:else>
+            没有打卡记录
+        </view>
+    </view>
+</view>

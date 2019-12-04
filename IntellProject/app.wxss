@@ -1,0 +1,311 @@
+.ws4 {
+    width: 25%;
+}
+
+.ws3 {
+    width: 33.33%;
+}
+
+.fl {
+    float: left;
+}
+
+.mt40 {
+    margin-top: 40rpx;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+
+.ft12 {
+    font-size: 12px;
+}
+
+.c333 {
+    color: #333;
+}
+
+.c9 {
+    color: #999;
+}
+
+.ftc {
+    text-align: center;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.h3 {
+    font-size: 40rpx;
+    color: #333;
+    font-weight: 500;
+    font-family: "黑体";
+}
+
+.bt {
+    border-bottom: 1px solid #eee;
+}
+
+.no_data {
+    text-align: center;
+    padding: 60rpx 0;
+}
+
+.weui-loadmore {
+    padding: 20rpx 0;
+    text-align: center;
+    color: #666;
+    font-size: 32rpx;
+}
+
+.lines_hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+}
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+.fc_light {
+    color: #b2b2b2;
+}
+
+.fc_grey {
+    color: #888888;
+}
+
+.fc_semi {
+    color: #353535;
+}
+
+.fc_black {
+    color: #000;
+}
+
+page {
+    background: #ededed;
+}
+
+.wx_title {
+    padding: 15px 15px 8px;
+    font-size: 14px;
+    color: #888;
+    background: #ededed;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.list_box {
+    background: white;
+}
+
+.list_item {
+    height: 55px;
+    line-height: 55px;
+    font-size: 17px;
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+
+.list_item_navigator {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.list_item .info_item {
+    flex: 1;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 15px;
+    align-items: center;
+    width: 100%;
+}
+
+.list_box .list_item:last-of-type .info_item {
+    border: none;
+}
+
+.list_item .info_item_key {
+    padding-right: 20px;
+    min-width: 60px;
+    font-family: '黑体';
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list_item .info_item_value {
+    color: #888888;
+    height: 100%;
+    text-align: right;
+}
+
+.navigator_right {
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: relative;
+}
+
+.form_box {
+    padding-left: 15px;
+    background: white;
+}
+
+.form_box .info_item {
+    min-height: 55px;
+    font-size: 17px;
+    padding-right: 15px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    display: flex;
+}
+
+.form_box .info_item:last-of-type {
+    border: none;
+}
+
+.form_box .info_item_key {
+    color: #000;
+    min-width: 85px;
+    align-items: center;
+    margin-right: 5px;
+    display: flex;
+}
+
+.form_box .info_item_value {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #888888;
+}
+
+.form_box .form_input {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    color: black;
+}
+
+.form_box .form_text {
+    text-align: left;
+    padding: 15px 0;
+    line-height: 25px;
+    height: auto;
+    width: 100%;
+    color: black;
+}
+
+.phcolor {
+    color: #b2b2b2;
+}
+
+.function_box {
+    background: white;
+}
+
+/*功能页面的二级功能*/
+.function_item {
+    min-height: 60px;
+    position: relative;
+    padding-left: 60px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.function_item:last-of-type {
+    border-bottom: none;
+}
+
+.function_item .item_img {
+    width: 28px;
+    height: 28px;
+    display: block;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    margin-top: -14px;
+}
+
+.function_item .item_cnt {
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 10px 0;
+    box-sizing: border-box;
+}
+
+.function_item .item_t1 {
+    font-size: 17px;
+    color: #000;
+    line-height: 25px;
+}
+
+.function_item .item_t2 {
+    font-size: 13px;
+    color: #888888;
+}
+
+
+.buttons_box {
+    padding: 40rpx 0;
+}
+
+.submit {
+    width: 94%;
+    height: 90rpx;
+    background: #07C160;
+    color: white;
+    line-height: 90rpx;
+    font-size: 36rpx;
+    margin: 30rpx auto 0;
+}
+
+.submit:first-of-type {
+    margin-top: 0;
+}
+
+.submit.save {
+    background: white;
+    color: #07C160;
+}
+
+.submit.delete {
+    background: red;
+}
+
+.submit.revoke {
+    background: #3c8dbc;
+}
+
+.weui-loadmore {
+    margin-top: 20rpx;
+    text-align: center;
+    color: #666;
+    font-size: 32rpx;
+}

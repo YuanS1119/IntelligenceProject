@@ -1,0 +1,56 @@
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+<view class="no_data" wx:if="{{ list.length == 0 }}">
+    {{ is_loading ? '正在加载' : '没有数据' }}
+</view>
+<view wx:for="{{list}}" wx:key="{{index}}">
+    <view class="wx_title">{{item.dataKey}}</view>
+    <view class="error" wx:if="{{ item.status =='1' }}">
+        {{item.statusMsg}}
+    </view>
+    <block wx:else>
+        <view wx:for="{{item.valueList}}"
+              wx:for-index="index1"
+              wx:for-item="item1"
+              wx:key="{{index}}-{{index1}}"
+              class="box"
+        >
+            <view class="title">
+                {{item1.dataKey}}
+            </view>
+            <view class="list_box">
+                <block
+                        wx:for="{{ item1.valueList }}"
+                        wx:for-item="item2"
+                        wx:for-index="index2"
+                        wx:key="{{index}}-{{index1}}-{{index2}}">
+                    <view class="image" wx:if="{{item2.dataKey == null && item2.dataValue.indexOf('http') !== -1}}">
+                        <image src="{{item2.dataValue}}"
+                               data-url="{{item2.dataValue}}"
+                               bindtap="show_image" mode="aspectFit"></image>
+                    </view>
+                    <view class="list_item" wx:else>
+                        <view class="info_item">
+                            <text class='info_item_key'>{{item2.dataKey}}</text>
+                            <view class='info_item_value'>{{ filter.nullFormat(item2.dataValue)}}</view>
+                        </view>
+                    </view>
+                </block>
+
+            </view>
+        </view>
+    </block>
+
+</view>
+
+<scroll-view
+        class="image_detail"
+        scroll-y="true"
+        animation="{{animationData}}"
+        bindtap="hide_image"
+        scroll-top="{{scroll_top}}"
+>
+    <view  class="image_detail_box">
+        <image class='image_detail_info' src='{{check_image}}' mode="widthFix"></image>
+    </view>
+
+</scroll-view>

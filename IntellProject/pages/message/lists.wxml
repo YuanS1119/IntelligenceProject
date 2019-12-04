@@ -1,0 +1,14 @@
+<view wx:if="{{message.length==0}}" class='no_data'>
+    {{loading?'正在加载' :'暂无没有消息'}}
+</view>
+<view class="list_box">
+    <navigator class="list_item"
+               wx:for="{{message}}" wx:key="sid"
+               url='/pages/message/detail?id={{item.sid}}'>
+        <view class="info_item">
+            <image src="/images/alert.png" class="alert"></image>
+            <view class='info_item_key'>{{item.msgTitle}}</view>
+            <image src="/images/arrow_right.png" class="navigator_right"></image>
+        </view>
+    </navigator>
+</view>

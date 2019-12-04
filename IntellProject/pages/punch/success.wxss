@@ -1,0 +1,15 @@
+page{background: white;}
+.title{padding-top: 40px;color: #07C160;font-size: 20px;line-height: 40px;text-align: center;}
+
+.address{margin-top: 50px;padding: 0 10%;text-align: center;}
+.item{min-height: 40px;padding: 10px 0 10px 30px;line-height: 20px;position: relative;
+    box-sizing: border-box;text-align: left;font-size: 16px;color: #333;}
+.item image{display: block;position: absolute;left: 0;top: 50%;margin-top: -10px;width: 20px;height: 20px;}
+.time{font-size: 16px;font-family: '黑体';color: #666;}
+.box{width: 80%;margin: 40px auto 0;background: white;padding: 30px 0;text-align: center;}
+.dk{width: 80px;height: 80px;border-radius: 50px;text-align: center;display: inline-block;padding: 5px 0;
+    background: white;border: 6px solid #d0d7dd;line-height: 20px;font-size: 14px;margin: 0 30px;color: #666}
+.dk image{width: 30px;height: 30px;display: block;margin: 0 auto 5px;}
+
+.back{margin-top: 20px;}
+.back button{border: 1px solid #ddd;width: 70%;background: white;height: 45px;line-height: 45px;font-size: 16px;color: #666;}

@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+    <view class='box'>
+        <view class='bac'></view>
+        <view class='wx_title'>快讯</view>
+        <view class='function_box'>
+            <navigator class="function_item" url='/pages/xmkx/index' open-type="navigate">
+                <image class='item_img' src='/images/xmkx/icon1_hr.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>所有快讯</view>
+                    <view class='item_t2'>查看项目部的所有已发布的快讯</view>
+                </view>
+            </navigator>
+            <navigator class="function_item" url='/pages/xmkx/my_list' open-type="navigate">
+                <image class='item_img' src='/images/xmkx/icon5_hr.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>我的快讯</view>
+                    <view class='item_t2'>查看我自己创建的快讯</view>
+                </view>
+            </navigator>
+            <navigator class="function_item" url='/pages/xmkx/add' open-type="navigate">
+                <image class='item_img' src='/images/xmkx/icon6_hr.png' mode="aspectFit"></image>
+                <view class="item_cnt">
+                    <view class='item_t1'>创建快讯</view>
+                    <view class='item_t2'>创建一条项目快讯</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+
+</view>
+

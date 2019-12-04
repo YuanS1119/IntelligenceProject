@@ -1,0 +1,31 @@
+/* pages/sgjd/shangbao/add.wxss */
+
+.form_text{min-height: 50px;}
+
+.mb5{margin-bottom: 5px;}
+.hbt{width: 50%;height: 100%;border: none;background: white;color: #6aa7fc;text-align: center;}
+.form_input{height: 100%;text-align: left;width: 100%;color: black;}
+.wzmc{position: relative;padding-right: 60px;margin-right: 0;}
+
+.info_items1{padding-left: 6px;background: white;border-top: 1px solid #ccc;}
+.wx_title{position: relative;}
+
+.change_type{height: 26px;line-height: 26px;border-radius: 2px;font-size: 13px;
+    padding: 0 10px;background: #07C160;color: white;position: absolute;
+    width: auto;display: inline-block;
+    right: 10px;top: 50%;margin-top: -13px;}
+
+.buttons_box{position: fixed;left: 0;bottom: 0;z-index: 1111;width: 100%;background: #ededed;padding: 20rpx 0;}
+
+.list_item{height: auto;min-height: 55px;}
+.list_item .info_item.text_info {
+    /*display: block;*/
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    min-height: 55px;
+    line-height: 25px;
+}
+.list_item .info_item.text_info text{flex: 1}
+.buttons_box_bac{height: 250rpx;}

@@ -1,0 +1,24 @@
+<wxs module="filter" src="../../utils/common.wxs"></wxs>
+<view class="box" wx:for="{{items}}" wx:key="dataKey">
+    <view class="wx_title">{{item.dataKey}}</view>
+    <view class="list_box">
+        <view class="list_item"
+              wx:for="{{item.dataValueList}}"
+              wx:for-index="index1"
+              wx:for-item="item1"
+              wx:key="dataKey"
+        >
+            <view class="zw"></view>
+            <view class="info_item">
+                <view class='info_item_key'>{{item1.dataKey}}</view>
+                <view class='info_item_value'>{{ filter.nullFormat(item1.dataValue)}}</view>
+            </view>
+        </view>
+        <view class="list_item" wx:if="{{item.dataValueList.length == 0}}">
+            <view class="zw"></view>
+            <view class="info_item">
+                <view class='info_item_key'>{{item.statusMsg}}</view>
+            </view>
+        </view>
+    </view>
+</view>

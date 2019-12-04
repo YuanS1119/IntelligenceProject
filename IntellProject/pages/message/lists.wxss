@@ -1,0 +1,7 @@
+.alert {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    margin-right: 5px;
+}

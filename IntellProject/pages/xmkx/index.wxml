@@ -1,0 +1,117 @@
+<view class="search_box position{{position}}">
+    <view wx:if="{{show_search_box==2}}" class="search_item color_active" data-item="2" bindtap='show_search_box'>
+        {{check_type == '' ? '全部类型' : check_type.typeName }}
+        <image class='item_img' src='/images/arrow_top1.png' mode="aspectFit"></image>
+    </view>
+    <view wx:else class="search_item" data-item="2" bindtap='show_search_box'>
+        {{check_type == '' ? '全部类型' : check_type.typeName }}
+        <image class='item_img' src='/images/arrow_bottom1.png' mode="aspectFit"></image>
+    </view>
+    <view wx:if="{{show_search_box==1}}" class="search_item br color_active" data-item="1"
+          bindtap='show_search_box'>
+        {{check_professional == '' ? '全部专业' : check_professional.name}}
+        <image class='item_img' src='/images/arrow_top1.png' mode="aspectFit"></image>
+    </view>
+    <view wx:else
+          class="search_item br"
+          data-item="1"
+          bindtap='show_search_box'>
+        {{check_professional == '' ? '全部专业' : check_professional.name}}
+        <image class='item_img' src='/images/arrow_bottom1.png' mode="aspectFit"></image>
+    </view>
+</view>
+<view style="height: 40px;" wx:if="{{position == 1}}"></view>
+
+<view wx:if="{{show_search_box==1}}" class="search_info">
+    <view class="search_info_back" bindtap='hide_search_info'></view>
+    <view class="search_info_box">
+        <scroll-view clsss="scrollview" style="height: 155px" scroll-y="true" height="300px">
+            <view class="search_info_cnt">
+                <view class="search_title">请选择专业</view>
+                <view class="items">
+                    <view wx:if="{{-1 == checked_index}}" bindtap='check_item' class="item active"
+                          data-index="-1">全部专业
+                    </view>
+                    <view wx:else class="item" bindtap='check_item' data-index="-1">全部专业</view>
+                    <block wx:for="{{professional}}" wx:key="code">
+                        <view wx:if="{{index == checked_index}}" bindtap='check_item' class="item active"
+                              data-index="{{index}}">{{item.name}}
+                        </view>
+                        <view wx:else class="item" bindtap='check_item' data-index="{{index}}">{{item.name}}</view>
+                    </block>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="search_button">
+            <view class="search_button_item br" bindtap='reset'>重置</view>
+            <view class="search_button_item color_active" bindtap='sure'>确定</view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{show_search_box==2}}" class="search_info">
+    <view class="search_info_back" bindtap='hide_search_info'></view>
+    <view class="search_info_box">
+        <scroll-view clsss="scrollview" style="height: 155px" scroll-y="true" height="300px">
+            <view class="search_info_cnt">
+                <view class="search_title">请选择类型</view>
+                <view class="items">
+                    <view wx:if="{{-1 == checked_index}}" bindtap='check_item' class="item active"
+                          data-index="-1">全部类型
+                    </view>
+                    <view wx:else class="item" bindtap='check_item' data-index="-1">全部类型</view>
+                    <block wx:for="{{types}}" wx:key="sid">
+                        <view wx:if="{{index == checked_index}}" bindtap='check_item' class="item active"
+                              data-index="{{index}}">{{item.typeName}}
+                        </view>
+                        <view wx:else class="item" bindtap='check_item' data-index="{{index}}">{{item.typeName}}</view>
+                    </block>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="search_button">
+            <view class="search_button_item br" bindtap='reset'>重置</view>
+            <view class="search_button_item color_active" bindtap='sure'>确定</view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{lists.length == 0}}" class="no_data">
+    暂无数据
+</view>
+<block wx:else>
+    <blocl wx:for="{{lists}}" wx:key="msgSid">
+        <navigator class="kx_list_item" url='/pages/xmkx/detail?id={{item.msgSid}}'>
+            <view class="list_item_title">
+                <text class="list_item_title_text">{{item.msgName}}</text>
+                <view class="list_title_right">></view>
+            </view>
+            <view class="list_item_content bt">
+                <view class="list_item_content_item1">
+                    <image class='list_item_img' src='{{item.msgPictureUrlList[0]}}' mode="aspectFill"></image>
+                </view>
+                <view class="list_item_content_item2">
+                    <text>{{item.msgText}}</text>
+                </view>
+            </view>
+            <view class="list_item_intro bt">
+                <view class="list_item_intro_item">
+                    <view class="list_item_intro_item_key">项目名称:</view>
+                    <view class="list_item_intro_item_value">{{local_project.projectAbbreviation}}</view>
+                </view>
+                <view class="list_item_intro_item">
+                    <view class="list_item_intro_item_key">项目类型:</view>
+                    <view class="list_item_intro_item_value">{{item.msgTypeName}}</view>
+                </view>
+            </view>
+            <view class="list_item_auth">
+                <view class="list_item_auth_item">
+                    发布人：{{item.releaseUserName}}
+                </view>
+                <view class="list_item_auth_item">
+                    发布日期：{{item.releaseDate}}
+                </view>
+            </view>
+        </navigator>
+    </blocl>
+    <view class="weui-loadmore" hidden="{{isHideLoadMore}}">正在加载...</view>
+</block>
+

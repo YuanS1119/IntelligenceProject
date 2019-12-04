@@ -1,0 +1,67 @@
+<!--pages/sgjd/shangbao/add.wxml-->
+<wxs module="filter" src="../../../utils/common.wxs"></wxs>
+<view wx:if="{{is_loading==1}}" class="no_data">正在加载</view>
+<view wx:else>
+    <view class='box'>
+        <view class='wx_title'>基础信息</view>
+        <view class="list_box bt">
+            <view class="list_item">
+                <view class="info_item">
+                    <text class='info_item_key'>作业队</text>
+                    <view class='info_item_value'>
+                        {{check_operation.name}}
+                    </view>
+                </view>
+            </view>
+            <view class="list_item">
+                <view class="info_item">
+                    <text class='info_item_key'>施工日期</text>
+                    <view class='info_item_value'>
+                        {{constructionDate}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="list_box bt">
+            <view class="list_item">
+                <view class="info_item text_info">
+                    <view class='fc_grey'>
+                        {{remark}}
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class='wx_title'>上报明细</view>
+        <view class="list_box">
+            <block wx:for="{{qjs}}" wx:key="desc">
+                <block wx:if="{{item.display == 1}}">
+                    <view class="list_item" data-key="{{index}}" bindtap='toggle_item'>
+                        <view class="info_item text_info">
+                        <text>{{item.desc}}</text>
+                        <image wx:if="{{item.show==1}}" class='navigator_right' src='/images/arrow_top.png' mode="aspectFit"></image>
+                        <image wx:else class='navigator_right' src='/images/arrow_bottom.png' mode="aspectFit"></image>
+                        </view>
+                    </view>
+                    <block wx:if="{{item.show == 1}}">
+                        <block wx:for="{{item.items}}" wx:key="id" wx:for-index="index1" wx:for-item="item1">
+                            <block wx:if="{{item1.value > 0}}">
+                                <view class="list_item">
+                                    <view class="info_item text_info">
+                                    <text class="fc_grey">{{item1.desc}}({{  item1.left}}/{{item1.total}})</text>
+                                    </view>
+                                </view>
+                                <view class="list_item">
+                                    <view class="info_item">
+                                    {{item1.value}}
+                                    </view>
+                                </view>
+                            </block>
+                        </block>
+                    </block>
+                </block>
+            </block>
+        </view>
+    </view>
+</view>
+

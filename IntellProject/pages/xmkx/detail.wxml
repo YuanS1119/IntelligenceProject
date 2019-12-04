@@ -1,0 +1,87 @@
+<view class='box'>
+    <view class='wx_title'>项目信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <text class='info_item_key'>当前项目</text>
+                <view class='info_item_value'>{{local_project.projectAbbreviation}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='box'>
+    <view class='wx_title'>快讯信息</view>
+    <view class="list_box">
+        <view class="list_item">
+            <view class="info_item">
+                <view class='info_item_key'>快讯标题</view>
+                <view class='info_item_value'>
+                    {{title}}
+                </view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <view class='info_item_key'>快讯正文</view>
+                <view class='info_item_value'>{{text}}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <view class='info_item_key'>快讯类型</view>
+                <view class='info_item_value'>{{ check_type.typeName }}</view>
+            </view>
+        </view>
+        <view class="list_item">
+            <view class="info_item">
+                <view class='info_item_key'>设计专业</view>
+                <view class='info_item_value'>{{ check_professional.name }}</view>
+            </view>
+        </view>
+
+
+
+
+    </view>
+</view>
+
+<view class='box'>
+    <view class='wx_title'>上传图片</view>
+    <view class="images">
+        <view class="image_item" wx:for="{{images}}" wx:key="id">
+            <image class='image_item_img'
+                   src='{{item.path}}'
+                   mode="aspectFit"
+                   data-index="{{index}}"
+                   bindtap="show_image"
+            ></image>
+        </view>
+    </view>
+</view>
+<view class='box' style="margin-bottom: 40rpx;">
+    <view class='wx_title bt'>现场位置</view>
+    <view class="map">
+        <map
+                id="myMap"
+                style="width: 100%; height: 200px;"
+                latitude="{{latitude}}"
+                longitude="{{longitude}}"
+                markers="{{markers}}"
+                enable-scroll="{{false}}"
+                enable-zoom="{{false}}"
+        ></map>
+    </view>
+</view>
+
+<scroll-view
+        class="image_detail"
+        scroll-y="true"
+        animation="{{animationData}}"
+        bindtap="hide_image"
+        scroll-top="{{scroll_top}}"
+>
+    <view  class="image_detail_box">
+        <image class='image_detail_info' src='{{check_image}}' mode="widthFix"></image>
+    </view>
+
+</scroll-view>

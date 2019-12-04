@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../echart/ec-canvas"
+  },
+  "navigationBarTitleText": "智慧施工"
+}

@@ -1,0 +1,17 @@
+<!--pages/sgjd/index.wxml-->
+<view class="container">
+    <view class='box'>
+        <view class='wx_title'>考勤</view>
+        <view class='items clearfix'>
+            <navigator url='/pages/punch/index' open-type="navigate">
+                <view class='function_item'>
+                    <image class='item_img' src='/images/punch.png' mode="aspectFit"></image>
+                    <view class="item_cnt">
+                        <view class='item_t1'>考勤打卡</view>
+                        <view class='item_t2'>生产施工人员上班签到和下班签退</view>
+                    </view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>

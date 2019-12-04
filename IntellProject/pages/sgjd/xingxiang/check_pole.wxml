@@ -1,0 +1,24 @@
+<scroll-view
+        class="scroll_view"
+        scroll-y="{{scrollY}}"
+        bindscroll="scroll"
+        bind:touchstart="touchstart"
+        bind:touchmove="touchmove"
+        bind:touchend="touchend">
+    <view class="info_items bt"
+          wx:for="{{poles}}"
+          wx:key="poleCode"
+          data-index="{{index}}"
+          bindtap="checkboxChange">
+        <image src="/images/checkboxed.png" wx:if="{{item.checked}}"></image>
+        <image src="/images/checkbox.png" wx:else></image>
+        {{item.poleName}}
+    </view>
+    <view wx:if="{{poles.length == 0 }}" class="no_data">
+        没有找到工序
+    </view>
+    <view class='buttons_box'>
+        <button class='submit' bindtap='sureCheck'>确定</button>
+        <button class="submit save" bindtap='cancelCheck'>取消</button>
+    </view>
+</scroll-view>
