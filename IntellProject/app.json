@@ -48,7 +48,11 @@
     "pages/labor/index",
     "pages/feature/ygyd/detail",
     "pages/feature/ytyd/detail",
-    "pages/xmkx/function"
+    "pages/xmkx/function",
+    "pages/azgl/index",
+    "pages/azgl/azProblom/index",
+    "pages/azgl/fxProblom/index",
+    "pages/azgl/azProblom/detial"
   ],
   "window": {
     "backgroundTextStyle": "light",

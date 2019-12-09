@@ -67,6 +67,7 @@ Page({
                 openId: '$$WX$$' + wx.getStorageSync('openid')
             },
                 function (res) {
+                    // console.log(res.retCode)
                     if (res.retCode != '0' || res.data.status != '0') {
                         wx.showModal({
                             content: res.errors[0].message,

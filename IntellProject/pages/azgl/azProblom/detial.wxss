@@ -1,0 +1,24 @@
+page{
+    background-color: #fff;
+}
+.title{
+    font-size: 30rpx;
+    color: #858585;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding-left: 20rpx;
+    background-color: #ccc;
+}
+.step{
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    font-size: 37rpx;
+    border-bottom:1rpx solid #ccc;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.pub{
+    color: #858585;
+}

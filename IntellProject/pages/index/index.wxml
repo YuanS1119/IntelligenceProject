@@ -13,6 +13,7 @@
     产值
 </view>
 <view class="box">
+    <!-- 分月产值 -->
     <view class="chart_title">分月产值数据</view>
     <view class="chart bt" wx:if="{{value_by_month.length > 0 && ec != ''}}">
         <view class="chart_box">
@@ -31,6 +32,57 @@
     <view wx:else class="no_data bt">
         暂无数据
     </view>
+     <!-- 产值贡献 -->
+    <view class="prodoct">
+        <view class="titleValue">产值贡献(10月)</view>
+        <view class="">
+            <!-- 图例 -->
+        <view class="lengend">
+          <view class="plan" style="display:flex" >
+            <view class="planBox pub"></view>
+            <view class="planText">计划产值 ( 万元 ) </view>
+          </view>
+          <view class="reality" style="display:flex">
+            <view class="realityBox pub"></view>
+            <view class="realityText"> 实际产值 ( 万元 ) </view>
+          </view>
+        </view>
+        <!-- echart -->
+        <view class="container">
+          <ec-canvas id="mychart-dom-bar"
+          canvas-id="mychart-bar"
+          ec="{{ ec }}"></ec-canvas>
+        </view>
+        </view>
+    </view>
+    <!-- 工程量 -->
+    <view class="projectNum">
+        <view class="titleNum">
+            <text class="proTitle">工程量</text>
+        </view>
+        <view class="proBase public">
+            <text class="baseText">地基工程</text>
+            <text class="baseValue">2814/2814</text>
+        </view>
+        <view class="proOut public">
+            <text class="outText">室外附属工程</text>
+            <text class="outValue">2814/2814</text>
+        </view>
+        <view class="proMain public">
+            <text class="mainText">主体结构</text>
+            <text class="mainValue">2814/2864</text>
+        </view>
+        <view class="proLand public">
+            <text class="landText">征地</text>
+            <text class="landValue">2814/2814</text>
+        </view>
+        <view class="lookMore public">
+            <text class="moreText">查看更多</text>
+            <text class="moreBtn">></text>
+        </view>
+        <text class="tip">工程量数据显示值为：计划量/实际量</text>
+    </view>
+
     <view class="total_value">
 
         <view class="h1">总体产值数据</view>
@@ -64,6 +116,7 @@
         </view>
     </view>
 </view>
+
 <block wx:for="{{resource}}" wx:key="dataKey">
     <view class="box">
         <view class="wx_title">{{item.dataKey}}</view>

@@ -1,0 +1,25 @@
+<!--pages/azgl/azProblom/index.wxml-->
+<!-- 安质问题 -->
+<view class="container">
+    <view class="problom">
+        <view class="text">
+            <view class="iss">徐州东站有一接触网有问题</view>
+            <text class="company">项目名称/回复状态</text>
+        </view>
+        <view class="more">></view>
+    </view>
+     <view class="problom">
+        <view class="text">
+            <view class="iss">徐州东站有一接触网有问题</view>
+            <text class="company">项目名称/回复状态</text>
+        </view>
+        <view class="more">></view>
+    </view>
+     <view class="problom">
+        <view class="text">
+            <view class="iss">徐州东站有一接触网有问题</view>
+            <text class="company">项目名称/回复状态</text>
+        </view>
+        <view class="more">></view>
+    </view>
+</view>

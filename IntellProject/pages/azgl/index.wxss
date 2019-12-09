@@ -1,0 +1,17 @@
+/* pages/azgl/index.wxss */
+page{
+    background-color: #fff;
+}
+.proSafe{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15rpx;
+}
+.safeProblom{
+    height: 100rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.look{
+    font-size: 25rpx;
+    color: #ccc;
+}

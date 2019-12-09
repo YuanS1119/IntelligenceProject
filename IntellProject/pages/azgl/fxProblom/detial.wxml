@@ -1,0 +1,57 @@
+<view >
+<view class="title">安全质量问题</view>
+<view class="safeProblom">
+    <view class="step">
+        <text class="">检查时间</text>
+        <text class="pub">2019-07-31</text>
+    </view>
+    <view class="step">
+        <text class="">检查人</text>
+        <text class="pub">李立明</text>
+    </view>
+    <view class="step">
+        <text class="">联系方式</text>
+        <text class="pub">123455666</text>
+    </view>
+    <view class="step">
+        <text class="">检查标题</text>
+        <text class="pub">有问题</text>
+    </view>
+    <view class="step">
+        <text class="">项目名称</text>
+        <text class="pub">名称</text>
+    </view>
+    <view class="step">
+        <text class="">检查事项</text>
+        <text class="pub">事项</text>
+    </view>
+    <view class="step">
+        <text class="">整改时间</text>
+        <text class="pub">2017-09-8</text>
+    </view>
+     <view class="step">
+        <text class="">整改人</text>
+        <text class="pub">姓名</text>
+    </view>
+    <view class="step">
+        <text class="">存在问题</text>
+        <text class="pub">漏水</text>
+    </view>
+     <view class="step">
+        <text class="">整改建议</text>
+        <text class="pub">修补</text>
+    </view>
+     <view class="step">
+        <text class="">整改完成时间</text>
+        <text class="pub">821930-23-2</text>
+    </view>
+     <view class="step">
+        <text class="" wx:bind:tap="">整改措施</text>
+        <text class="pub">第零六去</text>
+    </view>
+     <view class="step">
+        <text class="">整改结果描述</text>
+        <text class="pub">第六区</text>
+    </view>
+</view>
+</view>
