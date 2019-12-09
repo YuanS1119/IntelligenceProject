@@ -21,8 +21,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
-	"appid": "wx895127a950e0916e",
-	"projectname": "智慧施工",
+	"appid": "wx0529a40b61cd1563",
+	"projectname": "%E6%99%BA%E6%85%A7%E6%96%BD%E5%B7%A5",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -47,8 +47,36 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 3,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/feature/construction/index",
+					"pathName": "pages/feature/construction/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/feature/ytyd/info",
+					"pathName": "pages/feature/ytyd/info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/xmkx/add",
+					"pathName": "pages/xmkx/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/login",
+					"pathName": "pages/user/login",
+					"scene": null
+				}
+			]
 		}
 	}
 }

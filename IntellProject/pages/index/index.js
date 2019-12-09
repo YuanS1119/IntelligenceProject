@@ -30,6 +30,7 @@ Page({
             _this.setData({
                 local_project:local_project
             });
+            console.log(local_project)
         });
     },
     checkLogin: function (callback) {
@@ -38,6 +39,7 @@ Page({
         if (openid == '') {
             wx.login({
                 success: res => {
+                    console.log(res.code)
                     util.getHttp('/v1/weChar/findWeChatInfoByJsCode', { 'jsCode': res.code},
                         function(res){
                             wx.setStorageSync('openid', res.data.item.openId);

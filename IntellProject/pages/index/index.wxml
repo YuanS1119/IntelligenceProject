@@ -20,7 +20,10 @@
         </view>
         <view class="legend">
             <view class="legend_box">
-                <view class="legend_item"><view style="background: #d1edff"></view><text>计划</text></view>
+                <view class="legend_item">
+                <view style="background: #d1edff"></view>
+                <text>计划</text>
+                </view>
                 <view class="legend_item"><view style="background: #008fff"></view><text>实际</text></view>
             </view>
         </view>
