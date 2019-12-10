@@ -32,7 +32,7 @@
 }
 
 .prodoct{
-    margin: 10rpx 20rpx;
+    margin: 5px 15px;
   }
   ec-canvas {
     width: 100%;
@@ -40,7 +40,7 @@
   }
   .container {
     position: absolute;
-    top: 70rpx;
+    top: 10px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -52,30 +52,30 @@
   }
  
   .titleValue{
-    height: 90rpx;
-    line-height: 90rpx;
-    font-size: 25rpx;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
     color: #000;
-    font-weight: 600;
   }
   .lengend{
-    font-size: 20rpx;
-    height: 30rpx;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
     display:flex;
     justify-content: flex-end;
   }
   .pub{
-    height: 25rpx;
-    width: 30rpx;
-    margin: 0 10rpx;
+    height: 14px;
+    width: 20px;
+    margin: 0 5px;
   }
   .plan{
-    height:30rpx;
-    line-height: 30rpx
+    height:22px;
+    line-height: 22px
   }
   .reality{
-    height: 30rpx;
-    line-height: 30rpx;
+    height: 22px;
+    line-height: 22px;
   }
   .planBox{
     background-color: blue;  
@@ -89,33 +89,47 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    border-bottom: 1rpx solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.project_body{
+  padding: 0 0 0 15px;
 }
 .public{
-    padding: 0 30rpx;
+    padding-right: 15px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 3rpx solid #ccc;
+    border-bottom: 1px solid #ccc;
     background-color: #fff;
-    height: 110rpx;
-    line-height: 110rpx;
-    font-size: 35rpx;
+    height: 55px;
+    line-height: 55px;
+    font-size: 17px;
+}
+.pub2{
+  color: #888888;
 }
 .titleNum{
     padding: 0 8px;
     font-size:14px;
     color: #888;
-    height:80rpx;
-    line-height: 80rpx;
+    height:42px;
+    line-height: 42px;
     background-color: #ededed;    
 }
 .lookMore{
     border-bottom: none;
+    position: relative;
 }
 .tip{
-    padding: 0 30rpx;
-    height:45rpx;
+    padding: 0 15px;
+    height:15px;
     color: #848488;
-    font-size: 25rpx;
-    background-color: #fff;   
+    font-size: 12px;
+    background-color: #fff;  
+}
+.moreBtn{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 0;
 }

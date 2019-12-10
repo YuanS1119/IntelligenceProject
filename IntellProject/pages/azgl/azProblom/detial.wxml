@@ -40,7 +40,14 @@
      <view class="step">
         <text class="">整改建议</text>
         <text class="pub">修补</text>
-    </view>
+    </view>  
+</view>
+<!-- tip -->
+<view class="tip">
+    <text class="tip_text">由于附件大小问题，如需附件信息请到PC端查看</text>
+    <text class="tip_tip">整改回复信息</text>
+</view>
+<view class="safeProblom">
      <view class="step">
         <text class="">整改完成时间</text>
         <text class="pub">821930-23-2</text>

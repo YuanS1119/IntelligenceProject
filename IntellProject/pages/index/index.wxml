@@ -1,5 +1,5 @@
 <wxs module="filter" src="../../utils/common.wxs"></wxs>
-
+<!-- 工程项目 -->
 <view class="wx_title">
     工程项目
     <text class="fr">(上报数据最后更新于{{currentDate}})</text>
@@ -9,9 +9,11 @@
         {{local_project.projectAbbreviation}}
     </view>
 </view>
+<!-- 产值 -->
 <view class="wx_title">
     产值
 </view>
+<!-- 产值echart -->
 <view class="box">
     <!-- 分月产值 -->
     <view class="chart_title">分月产值数据</view>
@@ -60,31 +62,33 @@
         <view class="titleNum">
             <text class="proTitle">工程量</text>
         </view>
-        <view class="proBase public">
+        <view class="project_body">
+            <view class="proBase public">
             <text class="baseText">地基工程</text>
-            <text class="baseValue">2814/2814</text>
-        </view>
-        <view class="proOut public">
-            <text class="outText">室外附属工程</text>
-            <text class="outValue">2814/2814</text>
-        </view>
-        <view class="proMain public">
-            <text class="mainText">主体结构</text>
-            <text class="mainValue">2814/2864</text>
-        </view>
-        <view class="proLand public">
-            <text class="landText">征地</text>
-            <text class="landValue">2814/2814</text>
-        </view>
-        <view class="lookMore public">
-            <text class="moreText">查看更多</text>
-            <text class="moreBtn">></text>
+            <text class="baseValue pub2">2814/2814</text>
+            </view>
+            <view class="proOut public">
+                <text class="outText">室外附属工程</text>
+                <text class="outValue pub2">2814/2814</text>
+            </view>
+            <view class="proMain public">
+                <text class="mainText">主体结构</text>
+                <text class="mainValue pub2">2814/2864</text>
+            </view>
+            <view class="proLand public">
+                <text class="landText">征地</text>
+                <text class="landValue pub2">2814/2814</text>
+            </view>
+            <view class="lookMore public">
+                <text class="moreText" bindtap="more">查看更多</text>
+                <!-- <text class="moreBtn"></text> -->
+                <image src="../../images/arrow_right.png"  class="moreBtn"/>
+            </view>
         </view>
         <text class="tip">工程量数据显示值为：计划量/实际量</text>
     </view>
-
+    <!-- 总体产值数据 -->
     <view class="total_value">
-
         <view class="h1">总体产值数据</view>
         <block wx:if="{{total_value.planTotalValue!=null}}">
         <view class="percentage"><text style="{{total_value.totalFinishStyle}}">{{total_value.totalFinishPercentage}}</text></view>
@@ -95,6 +99,8 @@
             暂无数据
         </view>
     </view>
+
+<!-- 当月产值 -->
     <view class="list_box" wx:if="{{total_value.planTotalValue!=null && total_value.planTotalValue!=undefined}}">
         <view class="list_item">
             <view class="info_item">
@@ -116,7 +122,7 @@
         </view>
     </view>
 </view>
-
+<!-- 实物工程量+资源部署信息 -->
 <block wx:for="{{resource}}" wx:key="dataKey">
     <view class="box">
         <view class="wx_title">{{item.dataKey}}</view>

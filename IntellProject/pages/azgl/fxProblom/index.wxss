@@ -1,23 +1,25 @@
 page{
     background-color: #fff;
-    padding: 0 15rpx;
+    padding: 0 15px;
     box-sizing: border-box;
 }
 .problom{
     display: flex;
     justify-content: space-between;
-    height: 100rpx;
-    border-bottom: 1rpx solid #ccc;
+    height: 60px;
+    border-bottom: 1px solid #ccc;
 }
 .iss{
-    font-size: 30rpx;
-    margin-top: 5rpx;
+    font-size: 17px;
+    margin-top: 10px;
 }
 .company{
-    font-size: 20rpx;
-    color: #ccc;
+    font-size: 12px;
+    color: #888;
 }
 .more{
-    height: 100rpx;
-    line-height: 100rpx;
+    height: 28px;
+    width: 28px;
+    margin-top: 10px;
+    
 }

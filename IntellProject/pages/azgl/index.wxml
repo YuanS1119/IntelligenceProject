@@ -1,12 +1,12 @@
 <view class="proSafe">
-    <view >
+    <view class="proSafe1">
         <view class="icon"></view>
         <view class="safeProblom">
             <view class="proText" >安质问题</view>
             <text class="look">查看安全质量问题原因</text>
         </view>
     </view>
-    <view >
+    <view class="proSafe1">
         <view class="icon"></view>
         <view class="safeProblom">
            <view class="proText">安质风险</view>

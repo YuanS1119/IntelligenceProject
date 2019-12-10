@@ -52,7 +52,8 @@
     "pages/azgl/index",
     "pages/azgl/azProblom/index",
     "pages/azgl/fxProblom/index",
-    "pages/azgl/azProblom/detial"
+    "pages/azgl/azProblom/detial",
+    "pages/azgl/fxProblom/detial"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -12,7 +12,7 @@ App({
                     { img: '/images/icon_construction_manage.png', name: '智能安装', url: '/pages/feature/construction/index' },
                     { img: '/images/yupei.png', name: '预配管理', url: '' },
                     { img: '/images/icon_construction_wz.png', name: '智能物资', url: '' },
-                    { img: '/images/azgl.png', name: '安质管理', url: '' },
+                    { img: '/images/azgl.png', name: '安质管理', url: '/pages/azgl/index' },
                     { img: '/images/icon_record.png', name: '一杆一档', url: '/pages/feature/ygyd/index' },
                     { img: '/images/icon_tai.png', name: '一台一档', url: '/pages/feature/ytyd/index' },
                     { img: '/images/labor.png', name: '劳动力管理', url: '/pages/labor/index' },

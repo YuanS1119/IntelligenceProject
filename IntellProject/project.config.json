@@ -47,36 +47,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 3,
 			"list": [
-				{
-					"id": -1,
-					"name": "pages/feature/construction/index",
-					"pathName": "pages/feature/construction/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/feature/ytyd/info",
-					"pathName": "pages/feature/ytyd/info",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/xmkx/add",
-					"pathName": "pages/xmkx/add",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/login",
-					"pathName": "pages/user/login",
-					"query": "",
-					"scene": null
-				},
 				{
 					"id": -1,
 					"name": "pages/azgl/index",
@@ -95,6 +67,14 @@
 					"id": -1,
 					"name": "pages/azgl/azProblom/detial",
 					"pathName": "pages/azgl/azProblom/detial",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/azgl/azProblom/index",
+					"pathName": "pages/azgl/azProblom/index",
+					"query": "",
 					"scene": null
 				}
 			]
