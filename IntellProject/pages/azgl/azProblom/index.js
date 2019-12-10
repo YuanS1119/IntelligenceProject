@@ -1,11 +1,11 @@
-// pages/azgl/azProblom/index.js
+let util = reuqire('../../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  
   },
 
   /**

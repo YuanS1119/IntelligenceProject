@@ -1,5 +1,5 @@
 <view class="proSafe">
-    <view class="proSafe1">
+    <view class="proSafe1" bindtap="toProblom">
         <view class="icon"></view>
         <view class="safeProblom">
             <view class="proText" >安质问题</view>

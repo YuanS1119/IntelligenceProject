@@ -1,4 +1,4 @@
-// pages/azgl/index.js
+let util = require("../../utils/util");
 Page({
 
   /**
@@ -6,6 +6,17 @@ Page({
    */
   data: {
 
+  },
+  // 安质问题
+  toProblom:function(){
+    wx.navigateTo({
+      url:'/pages/azgl/azProblom/index',
+      success:function(res){
+        console.log(res)
+      }
+     }
+    )
+    
   },
 
   /**

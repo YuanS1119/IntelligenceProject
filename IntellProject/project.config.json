@@ -47,7 +47,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -74,6 +74,20 @@
 					"id": -1,
 					"name": "pages/azgl/azProblom/index",
 					"pathName": "pages/azgl/azProblom/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "componet/select/index",
+					"pathName": "componet/select/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/login",
+					"pathName": "pages/user/login",
 					"query": "",
 					"scene": null
 				}
