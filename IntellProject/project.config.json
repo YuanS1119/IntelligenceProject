@@ -47,12 +47,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/azgl/index",
 					"pathName": "pages/azgl/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/user/login",
+					"pathName": "pages/user/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "conponsent/select/select",
+					"pathName": "component/select/select",
 					"query": "",
 					"scene": null
 				}

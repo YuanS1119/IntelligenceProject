@@ -1,79 +1,50 @@
-let util = require('../../../utils/util')
+let util = require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    // select
+    selectArray: [{
+      "id": "10",
+      "text": "会计类"
+  }, {
+      "id": "21",
+      "text": "工程类"
+  }],
     pageSize:10,
     page:1
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  getProblem:function(){
     let userToken = wx.getStorageSync("openid");
-    let local_project =  JSON.parse(wx.getStorageSync("local_project"));
+    let local_project = JSON.parse(wx.getStorageSync("local_project"));
     let projectSid = local_project.projectSid;
-    util.getHttp('/v1/securityCheck/loadCheckListByProSid',{
-      userToken,
-      projectSid,
-      companyOrgId:'',
-      pageSize:this.data.pageSize,
-      page:this.data.page
-     
-    },function(res){
+    console.log(userToken)
+    console.log(local_project)
+    console.log(projectSid)
+    util.getHttp('/v1/security/loadCheckList',
+    {
+      'userToken': userToken,
+      'projectSid':projectSid,
+      'companyOrgId':'',
+      'pageSize':this.data.pageSize,
+      'page':this.data.page
+    },
+    function(res){
       console.log(res)
-    })
+    },function(){
+
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onLoad: function () {
+   
   },
-
+ 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    this.getProblem();
   }
 })

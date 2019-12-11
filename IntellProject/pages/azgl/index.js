@@ -11,19 +11,19 @@ Page({
   toProblom:function(){
     wx.navigateTo({
       url:'/pages/azgl/azProblom/index',
-      success:function(res){
-        console.log(res)
-      }
-     }
-    )
-    
+      events: {
+        acceptDataFromOpenedPage: function(data) {
+          console.log(data)
+        }
+      },
+    }) 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   console.log(options)
   },
 
   /**

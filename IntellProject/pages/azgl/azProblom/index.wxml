@@ -1,8 +1,6 @@
 <!-- 安质问题 -->
-<view class="container_select" bindtap="close">
-  <view class="select-wrap">
-    <select id="select" options="{{options}}" key="city_id" text="city_name" bind:change="change"></select>
-  </view>
+<view class="container_select">
+  <Select class="select" prop-array='{{selectArray}}'></Select>
 </view>
 <view class="container">
     <view class="problom">
