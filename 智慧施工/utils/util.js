@@ -31,7 +31,7 @@ function getUserProject(callback) {
         if (local_project.projectAbbreviation == '' || local_project.projectAbbreviation == null) {
             local_project.projectAbbreviation = local_project.projectName;
         }
-
+        // debugger
         wx.setStorageSync('local_project', JSON.stringify(local_project));
         if (callback != undefined) {
             callback(res, local_project);
@@ -92,12 +92,14 @@ function postHttp(url, pam, callback, failback) {
 function checkLogin(callback) {
     getHttp('/v1/user/findBindingStatusByOpenId', {},
         function (res) {
+            // debugger;
             console.log(res)
             if (res.retCode != 0 || res.data.bindingStatus != 0) {
                 wx.reLaunch({
                     url: '/pages/user/login'
                 })
             } else {
+                // debugger
                 getUserProject(callback);
             }
         }, function () {

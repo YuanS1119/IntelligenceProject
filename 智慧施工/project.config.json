@@ -4,11 +4,12 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": false,
@@ -22,7 +23,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
 	"appid": "wx895127a950e0916e",
-	"projectname": "IntellProject",
+	"projectname": "%E6%99%BA%E6%85%A7%E6%96%BD%E5%B7%A5",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

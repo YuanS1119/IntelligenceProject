@@ -8,14 +8,20 @@ Page({
     // select
     selectArray: [{
       "id": "10",
-      "text": "会计类"
+      "text": "超时未回复"
   }, {
       "id": "21",
-      "text": "工程类"
+      "text": "未回复"
   }],
+  // select key
+  key:{
+    azProblom:'checkReply',
+    fxProblom:'riskLevel'
+  },
     pageSize:10,
     page:1
   },
+  // 获取问题列表
   getProblem:function(){
     let userToken = wx.getStorageSync("openid");
     let local_project = JSON.parse(wx.getStorageSync("local_project"));
@@ -36,6 +42,12 @@ Page({
     },function(){
 
     });
+  },
+  // 跳转到详情页面
+  toDetail:function(){
+    wx.navigateTo({
+      url:'/pages/azgl/azProblom/detial'
+    }) 
   },
   onLoad: function () {
    
