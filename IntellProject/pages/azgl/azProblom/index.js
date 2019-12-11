@@ -1,18 +1,31 @@
-let util = reuqire('../../../utils/util')
+let util = require('../../../utils/util')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    pageSize:10,
+    page:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let userToken = wx.getStorageSync("openid");
+    let local_project =  JSON.parse(wx.getStorageSync("local_project"));
+    let projectSid = local_project.projectSid;
+    util.getHttp('/v1/securityCheck/loadCheckListByProSid',{
+      userToken,
+      projectSid,
+      companyOrgId:'',
+      pageSize:this.data.pageSize,
+      page:this.data.page
+     
+    },function(res){
+      console.log(res)
+    })
   },
 
   /**

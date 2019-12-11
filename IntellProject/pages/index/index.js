@@ -40,8 +40,10 @@ Page({
             wx.login({
                 success: res => {
                     console.log(res.code)
+                    // debugger;
                     util.getHttp('/v1/weChar/findWeChatInfoByJsCode', { 'jsCode': res.code},
                         function(res){
+                            console.log(res)
                             wx.setStorageSync('openid', res.data.item.openId);
                             util.checkLogin(callback);
                         },function(){

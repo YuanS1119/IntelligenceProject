@@ -35,10 +35,10 @@
         暂无数据
     </view>
      <!-- 产值贡献 -->
-    <view class="prodoct">
+    <!-- <view class="prodoct">
         <view class="titleValue">产值贡献(10月)</view>
         <view class="">
-            <!-- 图例 -->
+            图例
         <view class="lengend">
           <view class="plan" style="display:flex" >
             <view class="planBox pub"></view>
@@ -49,16 +49,16 @@
             <view class="realityText"> 实际产值 ( 万元 ) </view>
           </view>
         </view>
-        <!-- echart -->
+        echart
         <view class="container">
           <ec-canvas id="mychart-dom-bar"
           canvas-id="mychart-bar"
           ec="{{ ec }}"></ec-canvas>
         </view>
         </view>
-    </view>
+    </view> -->
     <!-- 工程量 -->
-    <view class="projectNum">
+    <!-- <view class="projectNum">
         <view class="titleNum">
             <text class="proTitle">工程量</text>
         </view>
@@ -81,12 +81,11 @@
             </view>
             <view class="lookMore public">
                 <text class="moreText" bindtap="more">查看更多</text>
-                <!-- <text class="moreBtn"></text> -->
                 <image src="../../images/arrow_right.png"  class="moreBtn"/>
             </view>
         </view>
         <text class="tip">工程量数据显示值为：计划量/实际量</text>
-    </view>
+    </view> -->
     <!-- 总体产值数据 -->
     <view class="total_value">
         <view class="h1">总体产值数据</view>

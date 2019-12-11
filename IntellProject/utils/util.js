@@ -3,8 +3,8 @@ let baseUrls = {
     'prod': 'https://api.smartcloudbiz.com:32003/api/webapi',//正式
     'dev': 'http://123.127.162.33:9092/api/webapi' //测试
 };
+let env = 'ty';
 // let env = 'prod';
-let env = 'ty'
 let noProjectIdUrl = [
     baseUrls[env] + '/v1/user/login',
     baseUrls[env] + '/v1/installManageCommon/saveOrUpdateInstallConsume'
@@ -14,7 +14,6 @@ function getUserProject(callback) {
         let local_project = wx.getStorageSync('local_project');
         local_project = local_project == '' ? '' : JSON.parse(local_project);
         let projectList = res.data.projectList;
-        console.log(projectList)
         let isValid = false;
         let default_project = projectList[0];
         for (let key in projectList) {
@@ -67,6 +66,7 @@ function helpHttp(method, url, pam, callback, failback) {
         method: method,
         header: header,
         success: function (res) {
+            // debugger;
             if (res.data.retCode != 0) {
                 toast('接口请求失败');
                 return;
@@ -92,6 +92,7 @@ function postHttp(url, pam, callback, failback) {
 function checkLogin(callback) {
     getHttp('/v1/user/findBindingStatusByOpenId', {},
         function (res) {
+            console.log(res)
             if (res.retCode != 0 || res.data.bindingStatus != 0) {
                 wx.reLaunch({
                     url: '/pages/user/login'

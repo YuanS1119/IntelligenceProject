@@ -9,13 +9,13 @@ Page({
   },
   // 安质问题
   toProblom:function(){
-    wx.navigateTo({
-      url:'/pages/azgl/azProblom/index',
-      success:function(res){
-        console.log(res)
-      }
-     }
-    )
+    // wx.navigateTo({
+    //   url:'/pages/azgl/azProblom/index',
+    //   success:function(res){
+    //     console.log(res)
+    //   }
+    //  }
+    // )
     
   },
 

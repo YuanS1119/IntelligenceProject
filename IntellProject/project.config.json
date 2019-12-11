@@ -21,8 +21,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.8.3",
-	"appid": "wx0529a40b61cd1563",
-	"projectname": "%E6%99%BA%E6%85%A7%E6%96%BD%E5%B7%A5",
+	"appid": "wx895127a950e0916e",
+	"projectname": "IntellProject",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -47,47 +47,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/azgl/index",
 					"pathName": "pages/azgl/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/azgl/azProblom/index",
-					"pathName": "pages/azgl/azProblom/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/azgl/azProblom/detial",
-					"pathName": "pages/azgl/azProblom/detial",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/azgl/azProblom/index",
-					"pathName": "pages/azgl/azProblom/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "componet/select/index",
-					"pathName": "componet/select/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/user/login",
-					"pathName": "pages/user/login",
 					"query": "",
 					"scene": null
 				}
